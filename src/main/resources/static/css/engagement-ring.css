@@ -1,0 +1,101 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.section-group {
+    width: 854px;
+
+    padding: 0px 15px;
+}
+
+.ring-page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ring-page-header img {
+    width: 824px;
+    height: 234px;
+
+    background-color: #141414;
+}
+
+.ring-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 25px 0px 35px;
+}
+
+.ring-name {
+    margin-bottom: 20px;
+}
+
+.text-style1 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #5c5c5c;
+}
+
+.text-style2 {
+    font-size: 12px;
+    color: #5c5c5c;
+}
+
+.select-option {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.select-box {
+    border: none;
+    outline: none;
+
+    font-size: 12px;
+}
+
+.ring-product {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.ring-img-price {
+    border: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-between;
+
+    width: 267px;
+    height: 400px;
+}
+
+.ring-img-price img {
+    width: 267px;
+    height: 267px;
+
+    background-color: #141414;
+}
+
+.ring-name-price {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    
+    padding: 20px 0px;
+}
+
+.text-style3 {
+    font-size: 14px;
+}
+
+.ring-price {
+    margin-top: 10px;
+}
