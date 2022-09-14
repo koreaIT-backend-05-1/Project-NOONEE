@@ -34,42 +34,43 @@ main {
     border: 1px solid rgb(175, 145, 94);
 }
 
+
 .faq-search i {
     position: absolute;
     right: 7px;
     top: 10px;
 }
 
-.questions-list {
+.question-list {
     margin-top: 15px;
 }
 
-.questions {
+.question {
     /* border-top: 1px solid black; */
     border-bottom: 1px solid black;
 }
 
-.questions:nth-child(1) {
+.question:nth-child(1) {
     border-top: 1px solid black;
 }
 
-.questions-title {
+.question-title {
     display: flex;   
     justify-content: space-between;
 
     padding: 14px 10px;
 }
 
-.btn-click {
+.btn-label {
     width: 773px;
     cursor: pointer;
 }
 
-.questions-title label {
+.question-title label {
     font-size: 14px;
 }
 
-.questions-btn {
+.question-btn {
     display: flex;
     justify-content: center;
     align-items: center;

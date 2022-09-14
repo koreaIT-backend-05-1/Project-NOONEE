@@ -1,0 +1,36 @@
+package com.project.noonee.service.auth.faq;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.project.noonee.domain.faq.FaqRepository;
+import com.project.noonee.web.dto.faq.GetFaqListResponseDto;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class faqServiceImpl implements faqService {
+	
+	private final FaqRepository faqRepository;
+	
+	@Override
+	public List<GetFaqListResponseDto> getFaqList(String searchValue) throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("search_value", searchValue == null ? "" : searchValue);
+		
+		List<GetFaqListResponseDto> list = new ArrayList<GetFaqListResponseDto>();
+		
+		faqRepository.getFaqList(map).forEach(faq -> {
+			list.add(faq.toListDto());
+		});
+	
+	
+		return list;
+	}
+	
+}
