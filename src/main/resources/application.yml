@@ -12,9 +12,9 @@ server:
     
 spring:
   security:
-#    user:
-#      name: test
-#      password: 1234
+    user:
+      name: test
+      password: 1234
     oauth2:
       client:
         registration:

@@ -12,5 +12,10 @@ public class FaqController {
 	public String loadFaq() {
 		return "bulletinboard/FAQ";
 	}
+	
+	@GetMapping("/inquiry")
+	public String loadWriting() {
+		return "bulletinboard/writing";
+	}
 }
  

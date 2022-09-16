@@ -5,33 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=input, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=lo03phk7lg"></script>
 
     <style>
-        div {
-            width: 100px;
-            height: 100px;
-            border: 1px solid black;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .DIV1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        width: 300px;
+        height: 200px;
+      }
 
-            border-radius: 50%;
-        }
+      .DIV2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        width: 250px;
+        height: 150px;
+      }
 
-        span {
-            font-size: 50px;
-        }
-
-
+      .DIV3 {
+        border: 1px solid black;
+        width: 200px;
+        height: 100px;
+      }
     </style>
+
 </head>
 <body>
-    
-    <div>
-        <label for="asd">123123</label>
-        <button type="button" class="qwe" id="asd">123456789</button>
+  <div id="container">
+    <div class="DIV1">
+      DIV1
+      <div class="DIV2">
+        DIV2
+        <div class="DIV3">DIV3</div>
+      </div>
     </div>
-    
+  </div>
+
+  <script>
+    const divs = document.querySelectorAll("div");
+
+    const clickEvent = (e) => {
+      console.log(e.currentTarget.className);
+    };
+
+    divs.forEach((div) => {
+      div.addEventListener("click", clickEvent);
+    });
+  </script>
+  
 </body>
 </html>
