@@ -1,0 +1,37 @@
+.review-section {
+    width: 100%;
+}
+
+.empty-section {
+    width: 1280px;
+    height: 60px;
+
+    padding: 0px 15px;
+}
+
+.review-list {
+    width: 1280px;
+    height: 1430px;
+
+}
+
+span {
+    color: #5c5c5c;
+    font-size: 14px;
+}
+
+em {
+    color: #af915e;
+    font-size: 12px;
+}
+
+.page-buttons {
+    display: inline-block;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.page-button {
+    background-color: white;
+    border: none;
+}
