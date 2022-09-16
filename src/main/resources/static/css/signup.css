@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-btn {
+    border: 1px solid #e0e0e0;
+
+    padding: 10px 25px;
+
+    width: 397px;
+    height: 39px;
+    
+    background-color: white;
+}
+
+.line {
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin: 25px 0px;
+
+    width: 397px;
+    height: 19px;
+
+    font-size: 12px;
+}
+
+.line div {
+    border-top: 1px solid #e0e0e0;
+    
+    width: 159px;
+    height: 1px;
+}
+
+.naver-oauth2-singup-btn {
+    border: 1px solid #02b13d;
+
+    padding: 10px 25px;
+
+    width: 397px;
+    height: 42px;
+
+    background-color: rgb(4, 179, 13);
+}
