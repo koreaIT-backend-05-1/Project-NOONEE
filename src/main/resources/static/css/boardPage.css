@@ -1,0 +1,191 @@
+button {
+        
+    border: none;
+
+    cursor: pointer;
+
+    background-color:transparent
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board-page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 60px;
+
+    width: 45%;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 20px;
+
+    height: 100px;
+    width: 100%;
+}
+
+.board-header-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.list-amount {
+    margin-left: 5px;
+
+    font-size: 12px;
+    color: #af915e;
+}
+
+
+.board {
+    width: 100%;
+}
+.board-list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.board-list-header {
+    border-width: 1px 0px;
+    border-top-color: #000;
+    border-bottom-color: #dbdbdb;
+    border-style: solid;
+    height: 40px;
+    width: 100%;
+}
+.board-list-header th {
+    padding: 10px 7px;
+    font-size: 12px;
+}
+
+.board-list-header th:nth-child(1) {
+    width: 6%;
+}
+.board-list-header th:nth-child(3) {
+    text-align: left;
+}
+.search-input {
+    padding: 6px 12px;
+    margin-right: -25px;
+    
+    border: 1px solid #dbdbdb;
+    
+    width: 220px;
+}
+.search-icon {
+    margin-right: 5px;
+}
+.search-input:focus {
+    border: 1px solid #af915e;
+
+    transition-duration: 0.5s;
+}
+.search-input:not(focus) {
+    transition-duration: 0.5s;
+}
+
+
+
+.notice {
+    background-color: #f9f9f9;
+}
+.board-list-row {
+
+    border-bottom: 1px solid #dbdbdb;
+    height: 40px;
+    width: 100%;
+
+    text-align: center;
+}
+.fa-lock {
+    margin-right: 10px;
+}
+
+.fa-comment {
+
+    margin: 0 5px;
+}
+.board-list-row td {
+    padding: 10px 7px;
+
+    font-size: 12px;
+}
+.board-list-row td:nth-child(2) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 600px;
+}
+.board-list-row td:nth-child(3) {
+    text-align: left;
+}
+
+
+
+
+
+.write-btn-box {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 10px 0;
+}
+
+.write-btn {
+    padding: 6px 20px;
+
+    border: 1px solid #af915e;
+
+    background-color: #ffffff;
+    color: #af915e;
+
+    cursor: pointer;
+}
+.write-btn:hover {
+    background-color: #af915e;
+    color: #ffffff;
+
+    transition-duration: 0.5s;
+}
+.write-btn:not(hover) {
+    transition-duration: 0.5s;
+}
+
+.page-btn-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100px;
+}
+
+.page-btn-box > button {
+    font-size: 14px;
+    color: #c6c6c2;
+    margin: 0 7px;
+
+}
+.page-btn-box > button:hover {
+    font-size: 14px;
+    color: #000;
+
+    transition-duration: 0.5s;
+}
+.page-btn-box > button:not(hover) {
+    transition-duration: 0.5s;
+}
