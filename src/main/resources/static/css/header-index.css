@@ -5,11 +5,11 @@
 }
 
 .section {
-    max-width: 1250px;
+    width: 100%;
     padding-left: 60px;
     padding-right: 15px;
     padding-top: 10px;
-    height: 76px;
+    height: 87px;
 }
 
 .section-all {
@@ -40,6 +40,14 @@
 .menu-list {
     display: flex;
     justify-content: space-between;
+}
+
+.drop-menu {
+    visibility: hidden;
+    display: block;
+
+    width: 166px;
+    height: 231px;
 }
 
 .brand-btn {
