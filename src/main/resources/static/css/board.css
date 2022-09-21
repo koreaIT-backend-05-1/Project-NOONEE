@@ -1,18 +1,61 @@
-.review-section {
+.section-all {
     width: 100%;
+    height: 1491px;
+
+    display: flex;
+    justify-content: center;
+
 }
 
-.empty-section {
+.review-section {
     width: 1280px;
-    height: 60px;
+    height: 1431px;
 
-    padding: 0px 15px;
+    margin: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .review-list {
     width: 1280px;
     height: 1430px;
 
+    margin-left: 220px;
+}
+
+.review {
+    width: 823px;
+}
+
+.review-inside {
+    box-sizing: border-box;
+    margin: 15px;
+
+    border-top: 1px solid #dbdbdb;
+
+}
+
+.review-insides {
+    box-sizing: border-box;
+    margin: 15px;
+
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.board-head {
+    width: 823px;
+    height: 48px;
+    padding: 0px 15px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-head {
+    margin-top: 20px;
 }
 
 span {
@@ -20,18 +63,59 @@ span {
     font-size: 14px;
 }
 
+.product-name {
+    color: #af915e;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.r {
+    color: #5c5c5c;
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
 em {
     color: #af915e;
     font-size: 12px;
 }
 
+.search-bar {
+    position: relative;
+    width: 220px;
+
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    border: 1px solid #bbb;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+img {
+    position : absolute;
+    width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0;
+  }
+  
 .page-buttons {
-    display: inline-block;
-    margin: 20px 0;
-    border-radius: 4px;
+    text-align: center;
+    width: 823px;
 }
 
 .page-button {
+    width: 25px;
+    height: 25px;
+    margin: 20px 0;
+
     background-color: white;
     border: none;
+
+    cursor: pointer;
 }
