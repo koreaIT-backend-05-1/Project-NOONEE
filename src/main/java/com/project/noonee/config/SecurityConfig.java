@@ -27,7 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.anyRequest() 
 			.permitAll()  
 			.and()  
-			.formLogin() 
+			.formLogin()
+//			.usernameParameter("useremail") 아이디를 username으로 할지 useremail로 할지
 			.loginPage("/auth/signin") 
 			.loginProcessingUrl("/auth/signin") 
 			.failureHandler(new AuthFailureHandler())

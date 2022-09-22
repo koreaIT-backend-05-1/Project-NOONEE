@@ -12,25 +12,27 @@
     <div id="container">
         <main>
             <div class="section-box">
+            	<form method="post" action ="auth/signin">
                 <section class="signin">
                     <div class="input-box">
                         <div class="email-input-box">
-                            <input type="email" placeholder="이메일" class="email-input">
+                            <input type="email" name="useremail" placeholder="이메일" class="email-input">
                         </div>
                         <div class="password-input-box">
-                            <input type="password" placeholder="비밀번호" class="password-input">
+                            <input type="password" name="password" placeholder="비밀번호" class="password-input">
                         </div>
                     </div>
                     <div class="signin-option">
                         <input type="checkbox">
-                        <span>로그인상태유지</span>
+                        <span>로그인상태유지a</span>
                     </div>
-                    <button type="button" class="signin-btn">로그인</button>
+                    <button type="submit" class="signin-btn">로그인</button>
                     <div class="signup-and-find-id">
                         <button type="button" class="signup-btn btn-style1">회원가입</button>
                         <button type="button" class="find-id-password btn-style1">아이디 · 비밀번호 찾기</button>
                     </div> 
                 </section>
+                </form>
                 <section class="oauth2-signup">
                     <div class="or-line">
                         <div></div>

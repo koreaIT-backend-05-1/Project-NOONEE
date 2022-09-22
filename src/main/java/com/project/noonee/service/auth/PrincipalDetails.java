@@ -20,12 +20,13 @@ public class PrincipalDetails implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		user.getUserRoles();
 		Collection<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
+
 		user.getUserRoles().forEach(role -> {
 			grantedAuthorities.add(() -> role);
 		});
-		return null;
+		
+		return grantedAuthorities;
 	}
 
 	@Override
@@ -35,7 +36,7 @@ public class PrincipalDetails implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return user.getUser_id();
+		return user.getUser_name();
 	}
 
 	@Override
@@ -47,7 +48,7 @@ public class PrincipalDetails implements UserDetails {
 	public boolean isAccountNonLocked() {
 		return true;
 	}
-
+	
 	@Override
 	public boolean isCredentialsNonExpired() {
 		return true;
@@ -57,6 +58,4 @@ public class PrincipalDetails implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-	
-	
 }
