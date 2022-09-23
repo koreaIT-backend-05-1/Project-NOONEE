@@ -13,6 +13,10 @@
 }
 
 .section-all {
+    width: 1803px;
+    height: 76px;
+    padding: 0px 50px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -30,7 +34,7 @@
 }
 
 .section-menu {
-    width: 540px;
+    width: 900px;
     padding: 18px 0px;
     height: 76px;
 
@@ -42,12 +46,10 @@
     justify-content: space-between;
 }
 
-.drop-menu {
-    visibility: hidden;
-    display: block;
+.all-btn {
+    position: relative;
 
-    width: 166px;
-    height: 231px;
+    background-color: #ffffff;
 }
 
 .brand-btn {
@@ -57,6 +59,7 @@
     text-decoration-color: #af915e;
     text-decoration-thickness: 2px;
     background-color: white;
+
     cursor: pointer;
 }
 
@@ -64,7 +67,245 @@
     color: #af915e;
 }
 
+.drop-menu {
+    position: absolute;
+
+    width: 166px;
+    height: 100px;
+    box-sizing: border-box;
+    
+    background-color: #ffffff;
+}
+
+.drop-menu2 {
+    position: absolute;
+
+    width: 166px;
+    height: 100px;
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+}
+
+.drop-menu3 {
+    position: absolute;
+    
+    width: 166px;
+    height: 100px;
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+}
+
+.drop-menu4 {
+    position: absolute;
+
+    width: 166px;
+    height: 100px;
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+}
+
+.drop-menu5 {
+    position: absolute;
+
+    width: 166px;
+    height: 90px;
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+}
+
+.drop-menu6 {
+    position: absolute;
+
+    width: 166px;
+    height: 70px;
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+}
+
+.dropdown-submenu {
+    display: none;
+
+    width: 166px;
+    height: 38px;
+    padding: 10px 20px;
+    color: #af915e;
+
+    background-color: #ffffffb3;
+    font-size: 13px;
+}
+
+.dropdown-submenu li {
+    color: #af915e;
+    font-size: 13px;
+
+    background-color: white;
+
+}
+
+.dropdown-submenu :hover {
+    background-color: #af915e;
+    color: #ffffff;
+}
+
+.dropdown-submenu2 {
+    display: none;
+
+    width: 166px;
+    height: 38px;
+    padding: 10px 20px;
+    color: #af915e;
+
+    background-color: #ffffffb3;
+    font-size: 13px;
+}
+
+.dropdown-submenu2 li {
+    color: #af915e;
+    font-size: 13px;
+
+    background-color: white;
+
+}
+
+.dropdown-submenu2 :hover {
+    background-color: #af915e;
+    color: #ffffff;
+}
+
+.dropdown-submenu3 {
+    display: none;
+
+    width: 166px;
+    height: 38px;
+    padding: 10px 20px;
+    color: #af915e;
+
+    background-color: #ffffffb3;
+    font-size: 13px;
+}
+
+.dropdown-submenu3 li {
+    color: #af915e;
+    font-size: 13px;
+
+    background-color: white;
+
+}
+
+.dropdown-submenu3 :hover {
+    background-color: #af915e;
+    color: #ffffff;
+}
+
+.dropdown-submenu4 {
+    display: none;
+
+    width: 166px;
+    height: 38px;
+    padding: 10px 20px;
+    color: #af915e;
+
+    background-color: #ffffffb3;
+    font-size: 13px;
+}
+
+.dropdown-submenu4 li {
+    color: #af915e;
+    font-size: 13px;
+
+    background-color: white;
+
+}
+
+.dropdown-submenu4 :hover {
+    background-color: #af915e;
+    color: #ffffff;
+}
+
+.dropdown-submenu5 {
+    display: none;
+
+    width: 166px;
+    height: 38px;
+    padding: 10px 20px;
+    color: #af915e;
+
+    background-color: #ffffffb3;
+    font-size: 13px;
+}
+
+.dropdown-submenu5 li {
+    color: #af915e;
+    font-size: 13px;
+
+    background-color: white;
+
+}
+
+.dropdown-submenu5 :hover {
+    background-color: #af915e;
+    color: #ffffff;
+}
+
+.dropdown-submenu6 {
+    display: none;
+
+    width: 166px;
+    height: 38px;
+    padding: 10px 20px;
+    color: #af915e;
+
+    background-color: #ffffffb3;
+    font-size: 13px;
+}
+
+.dropdown-submenu6 li {
+    color: #af915e;
+    font-size: 13px;
+
+    background-color: white;
+
+}
+
+.dropdown-submenu6 :hover {
+    background-color: #af915e;
+    color: #ffffff;
+}
+
 .menu-btn {
+    font-size: 13px;
+    color: #af915e;
+    background-color: white;
+    cursor: pointer;
+}
+
+.menu2-btn {
+    font-size: 13px;
+    color: #af915e;
+    background-color: white;
+    cursor: pointer;
+}
+
+.menu3-btn {
+    font-size: 13px;
+    color: #af915e;
+    background-color: white;
+    cursor: pointer;
+}
+
+.menu4-btn {
+    font-size: 13px;
+    color: #af915e;
+    background-color: white;
+    cursor: pointer;
+}
+
+.menu5-btn {
     font-size: 13px;
     color: #af915e;
     background-color: white;
@@ -132,5 +373,7 @@ i {
 #down-icon {
     color: black;
 }
+
+
 
 

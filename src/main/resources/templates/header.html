@@ -7,8 +7,9 @@
 
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
-    <link rel="stylesheet" href="/src/main/resources/static/css/header-style.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/style.css">
     <link rel="stylesheet" href="/src/main/resources/static/css/header-index.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title>디자이너 주얼리 NOONEE</title>
 </head>
@@ -18,33 +19,79 @@
             <div class="section-all">
                 <div class="section-logo">
                     <span></span>
-                    <img class="main-logo" src="https://cdn.imweb.me/thumbnail/20220806/fb776d8fb5424.png" width="118" style="max-width: 100%; height:auto;"> 
+                    <img class="main-logo" src="https://cdn.imweb.me/thumbnail/20220916/06a0a35097e84.png" width="118" style="max-width: 100%; height:auto;"> 
                 </div>
                 <div class="section-menu" style="visibility: visible;">
                     <nav class="menu-list">
-                        <ul>
+                        <ul class="all-btn">
                             <button class="brand-btn">BRAND</button>
-                            <li class="drop-menu" role="menu"></li>
+                            <div class="drop-menu" role="menu">
+                                <ul class="dropdown-submenu">
+                                    <li>ABOUT NOONEE</li> 
+                                    <li>DESIGNER'S PROFLE</li>
+                                    <li>CRAFTMANSHIP</li>
+                                    <li>NOONEE DIAMOND</li>
+                                    <li>CUSTOMER SERVICE</li>
+                                    <li>SHOP INFO</li>
+                                </ul>
+                            </div>
                         </ul>
                         <ul>
                             <button class="menu-btn">BRIDAL</button>
-                            <li class="drop-menu" role="menu"></li>
+                            <div class="drop-menu2" role="menu">
+                                <ul class="dropdown-submenu2">
+                                    <li>ENGAGEMENT RING</li>
+                                    <li>WEDDING BAND</li> 
+                                    <li>PROPOSE RING</li>
+                                    <li>NECKLACE</li>
+                                    <li>EARRINGS</li>
+                                </ul>
+                            </div>
                         </ul>
                         <ul>
-                            <button class="menu-btn">COLLECTION</button>
-                            <li class="drop-menu" role="menu"></li>
+                            <button class="menu2-btn">COLLECTION</button>
+                            <div class="drop-menu3" role="menu">
+                                <ul class="dropdown-submenu3">
+                                    <li>깃</li> 
+                                    <li>윤슬</li>
+                                    <li>LEAF</li>
+                                    <li>LIKE A TREE</li>
+                                    <li>UN BACIO</li>
+                                    <li>FROM THE MOON</li>
+                                </ul>
+                            </div>
                         </ul>
                         <ul>
-                            <button class="menu-btn">FASHION</button>
-                            <li class="drop-menu" role="menu"></li>
+                            <button class="menu3-btn">FASHION</button>
+                            <div class="drop-menu4" role="menu">
+                                <ul class="dropdown-submenu4">
+                                    <li>RING</li> 
+                                    <li>NECKLACE</li>
+                                    <li>EARRINGS</li>
+                                    <li>BRACELET</li>
+                                    <li>etc</li>
+                                </ul>
+                            </div>
                         </ul>
                         <ul>
-                            <button class="menu-btn">Q&A</button>
-                            <li class="drop-menu" role="menu"></li>
+                            <button class="menu4-btn">Q&A</button>
+                            <div class="drop-menu5" role="menu">
+                                <ul class="dropdown-submenu5">
+                                    <li>FAQ</li> 
+                                    <li>예약 문의</li>
+                                    <li>A/S 문의</li>
+                                    <li>기타 문의</li>
+                                </ul>
+                            </div>
                         </ul>
                         <ul>
-                            <button class="menu-btn">CUSTOMER</button>
-                            <li class="drop-menu" role="menu"></li>
+                            <button class="menu5-btn">CUSTOMER</button>
+                            <div class="drop-menu6" role="menu">
+                                <ul class="dropdown-submenu6">
+                                    <li>REVIEW</li> 
+                                    <li>PUBLIC RELATION</li>
+                                </ul>
+                            </div>
                         </ul>
                     </nav>
                 </div>
@@ -65,10 +112,149 @@
                         <img src="/src/main/resources/static/img/flag_kr_square.png" width="23px" style="border: 1px solid rgba(128,128,128,0.2)">
                         <span class="korea">한국어</span>
                         <i class="fa-solid fa-caret-down" id="down-icon"></i>
-                    </div>               
+                    </div>              
                 </div>
             </div>
         </div>
     </header>
+    <div class="modal">
+    <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-search">
+            <input id="search-box" type="text" placeholder="검색">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+    <script>
+        const brandBtn = document.querySelector('.brand-btn');
+
+        const menuBtn = document.querySelector('.menu-btn');
+        const menu2Btn = document.querySelector('.menu2-btn');
+        const menu3Btn = document.querySelector('.menu3-btn');
+        const menu4Btn = document.querySelector('.menu4-btn');
+        const menu5Btn = document.querySelector('.menu5-btn');
+
+        const dropMenu = document.querySelector('.drop-menu');
+        const dropMenu2 = document.querySelector('.drop-menu2');
+        const dropMenu3 = document.querySelector('.drop-menu3');
+        const dropMenu4 = document.querySelector('.drop-menu4');
+        const dropMenu5 = document.querySelector('.drop-menu5');
+        const dropMenu6 = document.querySelector('.drop-menu6');
+
+        const dropdownMenu = document.querySelector('.dropdown-submenu');
+        const dropdownMenu2 = document.querySelector('.dropdown-submenu2');
+        const dropdownMenu3 = document.querySelector('.dropdown-submenu3');
+        const dropdownMenu4 = document.querySelector('.dropdown-submenu4');
+        const dropdownMenu5 = document.querySelector('.dropdown-submenu5');
+        const dropdownMenu6 = document.querySelector('.dropdown-submenu6');
+
+        const modal = document.querySelector('.modal');
+        const openBtn = document.querySelector('.search');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        brandBtn.onmouseover = () => {
+            dropdownMenu.style.display = "block";
+        }
+
+        dropMenu.onmouseover = () => {
+            dropdownMenu.style.display = "block";
+        }
+
+        dropMenu.onmouseout = () => {
+            dropdownMenu.style.display = "none";
+        }
+
+        brandBtn.onmouseout = () => {
+            dropdownMenu.style.display = "none";
+        } //brand
+
+        menuBtn.onmouseover = () => {
+            dropdownMenu2.style.display = "block";
+        }
+
+        dropMenu2.onmouseover = () => {
+            dropdownMenu2.style.display = "block";
+        }
+
+        menuBtn.onmouseout = () => {
+            dropdownMenu2.style.display = "none";
+        }
+
+        dropMenu2.onmouseout = () => {
+            dropdownMenu2.style.display = "none";
+        } //bridal
+
+        menu2Btn.onmouseover = () => {
+            dropdownMenu3.style.display = "block";
+        }
+
+        dropMenu3.onmouseover = () => {
+            dropdownMenu3.style.display = "block";
+        }
+
+        menu2Btn.onmouseout = () => {
+            dropdownMenu3.style.display = "none";
+        }
+
+        dropMenu3.onmouseout = () => {
+            dropdownMenu3.style.display = "none";
+        } //collection
+
+        menu3Btn.onmouseover = () => {
+            dropdownMenu4.style.display = "block";
+        }
+
+        dropMenu4.onmouseover = () => {
+            dropdownMenu4.style.display = "block";
+        }
+
+        menu3Btn.onmouseout = () => {
+            dropdownMenu4.style.display = "none";
+        }
+
+        dropMenu4.onmouseout = () => {
+            dropdownMenu4.style.display = "none";
+        } //fashion
+
+        menu4Btn.onmouseover = () => {
+            dropdownMenu5.style.display = "block";
+        }
+
+        dropMenu5.onmouseover = () => {
+            dropdownMenu5.style.display = "block";
+        }
+
+        menu4Btn.onmouseout = () => {
+            dropdownMenu5.style.display = "none";
+        }
+
+        dropMenu5.onmouseout = () => {
+            dropdownMenu5.style.display = "none";
+        } //Q&A
+
+        menu5Btn.onmouseover = () => {
+            dropdownMenu6.style.display = "block";
+        }
+
+        dropMenu6.onmouseover = () => {
+            dropdownMenu6.style.display = "block";
+        }
+
+        menu5Btn.onmouseout = () => {
+            dropdownMenu6.style.display = "none";
+        }
+
+        dropMenu6.onmouseout = () => {
+            dropdownMenu6.style.display = "none";
+        } //customer
+
+        openBtn.onclick = () => {
+            modal.style.display = "block";
+            modal.style.overflow = "hidden";
+        };
+        
+        closeBtn.onclick = () => {
+            modal.style.display = "none";
+        };
+    </script>
 </body>
 </html>
