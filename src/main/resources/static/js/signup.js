@@ -3,21 +3,21 @@ const signupButton = document.querySelectorAll("button")[0];
 
 let checkUsernameFlag = false;
  
-inputs[2].onblur = () => {
+inputs[0].onblur = () => {
 
 	$.ajax({
 		async: false,
 		type: "get",
 		url: "/api/v1/auth/signup/validation/username",
-		data: {username : inputs[2].value},
+		data: {username : inputs[0].value},
 		dataType: "json",
 		success: (response) => {
 			checkUsernameFlag = response.data;
 			
 			if(checkUsernameFlag) {
-				alert("사용 가능한 아이디입니다.");
+				alert("사용 가능한 이메일입니다.");
 			}else{
-				alert("이미 사용중인 아이디입니다.");
+				alert("이미 사용중인 이메일입니다.");
 			}
 		},
 		error: (error) => {
@@ -33,10 +33,10 @@ inputs[2].onblur = () => {
 
 signupButton.onclick = () => {
 	let signupData = {
-		name: inputs[0].value,
-		email: inputs[1].value,
-		username: inputs[2].value,
-		password: inputs[3].value,
+		email: inputs[0].value,
+		password: inputs[1].value,
+		username: inputs[3].value,
+		userphone: inputs[4].value,
 		"checkUsernameFlag": checkUsernameFlag
 	}
 	
