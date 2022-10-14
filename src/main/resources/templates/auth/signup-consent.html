@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/signup-consent.css">
+</head>
+<head th:replace="~{/fragments/head :: head}"></head>
+<head th:replace="~{/fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <div class="flex-box">
+                <div class="checkbox">
+                    <input type="checkbox" id="all-consent" class="all-consent">
+                    <label for="all-consent">이용약관, 개인정보 수집 및 이용에 모두 동의합니다.</label>
+                </div>
+                <div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="must-consent" class="must-consent">
+                        <label for="must-consent" class="aft-agree">이용약관 동의</label>
+                    </div>
+                    <div class="input-block">
+                        <textarea></textarea>
+                    </div>
+                </div>
+                <div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="personal-infom" class="personal-infom">
+                        <label for="personal-infom" class="aft-agree">개인정보 수집 및 이용 동의</label>
+                    </div>
+                    <div class="input-block">
+                        <textarea></textarea>
+                    </div>
+                </div>
+                <div class="all-btn">
+                    <button type="button" class="cancel-btn">취소</button>
+                    <button type="button" class="signup-btn">가입하기</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+    <script type="text/javascript" src="/static/js/signup-consent.js"></script>
+</body>
+</html>

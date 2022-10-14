@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/shop-info.css" />
+    <script
+      type="text/javascript"
+      src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=lo03phk7lg"
+    ></script>
+  </head>
+  <body>
+    <div id="container">
+      <main>
+        <section>
+          <div class="shop-info">
+            <div class="shop-info-map">
+              <div class="shop-info-text">
+                <span class="shop-name">Edizióne NOONEE (한남본점)</span>
+                <p>서울시 용산구 한남동 683-10</p>
+                <p>683-10, HANNAM-DONG, YONGSAN-GU, SEOUL, KOREA</p>
+                <p>TEL 02 749 5540</p>
+                <p>
+                  PARKING 1 한강진역 공영주차장 | 도보 5분거리 (5분당 400원)
+                </p>
+                <p>PARKING 2 한남동 공영주차장 | 도보 7분거리 (5분당 250원)</p>
+              </div>
+              <div class="map-box">
+                <div id="map1" class="map"></div>
+              </div>
+            </div>
+            <div class="shop-info-btn-box">
+              <button type="button" class="shop-info-btn reservation">
+                예약하기
+              </button>
+              <button type="button" class="shop-info-btn">둘러보기</button>
+            </div>
+          </div>
+          <div class="line"></div>
+        </section>
+        <section>
+          <div class="shop-info">
+            <div class="shop-info-map">
+              <div class="shop-info-text">
+                <span class="shop-name">Edizióne NOONEE (한남본점)</span>
+                <p>서울시 용산구 한남동 683-10</p>
+                <p>683-10, HANNAM-DONG, YONGSAN-GU, SEOUL, KOREA</p>
+                <p>TEL 02 749 5540</p>
+                <p>
+                  PARKING 1 한강진역 공영주차장 | 도보 5분거리 (5분당 400원)
+                </p>
+                <p>PARKING 2 한남동 공영주차장 | 도보 7분거리 (5분당 250원)</p>
+              </div>
+              <div class="map-box">
+                <div id="map2" class="map"></div>
+              </div>
+            </div>
+            <div class="shop-info-btn-box">
+              <button type="button" class="shop-info-btn reservation">
+                예약하기
+              </button>
+              <button type="button" class="shop-info-btn">둘러보기</button>
+            </div>
+          </div>
+          <div class="line"></div>
+        </section>
+        <section>
+          <div class="shop-info">
+            <div class="shop-info-map">
+              <div class="shop-info-text">
+                <span class="shop-name">Edizióne NOONEE (한남본점)</span>
+                <p>서울시 용산구 한남동 683-10</p>
+                <p>683-10, HANNAM-DONG, YONGSAN-GU, SEOUL, KOREA</p>
+                <p>TEL 02 749 5540</p>
+                <p>
+                  PARKING 1 한강진역 공영주차장 | 도보 5분거리 (5분당 400원)
+                </p>
+                <p>PARKING 2 한남동 공영주차장 | 도보 7분거리 (5분당 250원)</p>
+              </div>
+              <div class="map-box">
+                <div id="map3" class="map"></div>
+              </div>
+            </div>
+            <div class="shop-info-btn-box">
+              <button type="button" class="shop-info-btn reservation">
+                예약하기
+              </button>
+              <button type="button" class="shop-info-btn">둘러보기</button>
+            </div>
+          </div>
+          <div class="line"></div>
+        </section>
+        <section>
+          <div class="shop-info">
+            <div class="shop-info-map">
+              <div class="shop-info-text">
+                <span class="shop-name">Edizióne NOONEE (한남본점)</span>
+                <p>서울시 용산구 한남동 683-10</p>
+                <p>683-10, HANNAM-DONG, YONGSAN-GU, SEOUL, KOREA</p>
+                <p>TEL 02 749 5540</p>
+                <p>
+                  PARKING 1 한강진역 공영주차장 | 도보 5분거리 (5분당 400원)
+                </p>
+                <p>PARKING 2 한남동 공영주차장 | 도보 7분거리 (5분당 250원)</p>
+              </div>
+              <div class="map-box">
+                <div id="map4" class="map"></div>
+              </div>
+            </div>
+            <div class="shop-info-btn-box">
+              <button type="button" class="shop-info-btn reservation">
+                예약하기
+              </button>
+              <button type="button" class="shop-info-btn">둘러보기</button>
+            </div>
+          </div>
+          <div class="line"></div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      var mapOptions1 = {
+        center: new naver.maps.LatLng(37.3595704, 127.105399),
+        zoom: 10,
+      };
+
+      var map = new naver.maps.Map("map1", mapOptions1);
+
+      var mapOptions2 = {
+        center: new naver.maps.LatLng(37.3595704, 127.105399),
+        zoom: 10,
+      };
+
+      var map = new naver.maps.Map("map2", mapOptions2);
+
+      var mapOptions3 = {
+        center: new naver.maps.LatLng(37.3595704, 127.105399),
+        zoom: 10,
+      };
+
+      var map = new naver.maps.Map("map3", mapOptions3);
+
+      var mapOptions4 = {
+        center: new naver.maps.LatLng(37.3595704, 127.105399),
+        zoom: 10,
+      };
+
+      var map = new naver.maps.Map("map4", mapOptions4);
+    </script>
+  </body>
+</html>

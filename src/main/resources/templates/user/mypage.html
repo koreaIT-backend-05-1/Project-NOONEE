@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/mypage.css">
+</head>
+<head th:replace="~{/fragments/head :: head}"></head>
+<head th:replace="~{/fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <div class="mypage-area">
+                <div class="mypage-menu">
+                    <button type="button" class="menu-btn">주문 조회</button>
+                    <button type="button" class="menu-btn">위시 리스트</button>
+                    <button type="button" class="menu-btn">취소 조회</button>
+                    <button type="button" class="menu-btn">포인트</button>
+                    <button type="button" class="menu-btn">1:1 문의</button>
+                    <button type="button" class="menu-btn update-user">정보 수정</button>
+                    <button type="button" class="menu-btn delete-user">회원탈퇴</button>
+                </div>
+                <div class="user-and-content">
+                    <div class="user-info">
+                        <div class="user-info-detail">
+                            <div class="user-profile-img">
+                                <img src="/static/img/mypage-profile-img.PNG" alt="">
+                            </div>
+                            <div class="user-rating">
+                                <span class="user-name">asd 님 안녕하세요.</span>
+                                <span class="purchase-amount">누적 구매금액: 0원</span>
+                                <button type="button" class="rating-btn">등급해택 보기</button>
+                            </div>
+                        </div>
+                        <div class="point">
+                            <span class="point-title">포인트</span>
+                            <span class="point-content">20,000</span>
+                        </div>
+                    </div>
+                    <div class="mypage-content">
+                        <div class="content-title">
+                            <span class="content-title-text">주문 조회</span>
+                        </div>
+                        <div class="content">
+                            <span class="content-text">주문 내역이 없습니다.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div> 
+    <div class="update-modal update-visible">
+        <div class="modify-modal">
+            <div class="modal-title">
+                <h2 class="title">정보 수정</h2>
+                <img src="/static/img/modal-img.PNG" alt="">
+                <span class="rating">기본등급</span>
+                <div class="email">aaaa@naver.com</div>
+            </div>
+            <div class="name-input modify-input">
+                <label for="name" class="after">이름 </label>
+                <input type="text" id="name" class="input">
+            </div>
+            <div class="phone-input modify-input">
+                <label for="phone" class="after">연락처 </label>
+                <input type="text" id="phone" class="input">
+            </div>
+            <button class="check-btn">확인</button>
+            <div class="social-login">
+                <span class="social-login-title">소셜 로그인</span>
+                <button type="button" class="kakao-login-btn">카카오 연결</button>
+                <button type="button" class="naver-login-btn">네이버 연결</button>
+            </div>
+        </div>
+    </div>
+    <div class="delete-modal visible">
+        <div class="withdrawal-modal">
+            <span class="withdrawal-title">회원탈퇴</span>
+            <div class="withdrawal-content">
+                <p>가입된 회원정보가 모두 삭제됩니다. 작성하신 게시물은 삭제되지 않습니다.</p>
+                <p>탈퇴 후 같은 계정으로 재가입 시 기존에 가지고 있던 적입금은 복원되지 않으며, 사용 및 다운로드했던</p>
+                <p>쿠폰도 사용 불가능합니다.</p>
+                <p>회원 탈퇴를 진행하시겠습니까?</p>
+            </div>
+            <div class="withdrawal-btn">
+                <button type="button" class="cancel">취소</button>
+                <button type="button" class="withdrawal">탈퇴하기</button>
+            </div>
+        </div>
+    </div>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+    <script src="/static/js/mypage.js"></script>
+</body>
+</html>

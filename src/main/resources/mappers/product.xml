@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.project.noonee.domain.product.ProductRepository">
+<!-- *****************************************************************************************************************  -->
+
+	<select id="getCategoryList" parameterType="Integer" resultType="com.project.noonee.domain.product.Product">
+		select
+			pm.product_code,
+			pm.category_code,
+			pm.product_name,
+			pm.product_price,
+			pm.product_img
+		from
+			product_mst pm
+			left outer join category_mst cm on (cm.category_code = pm.category_code)
+		where
+			pm.category_code = #{category_code}
+	</select>
+
+<!-- *****************************************************************************************************************  -->
+
+	<select id="getCollectionList" parameterType="Integer" resultType="com.project.noonee.domain.product.Product">
+		select
+			pm.product_code,
+			pm.collection_code,
+			pm.product_name,
+			pm.product_price,
+			pm.product_img
+		from
+			product_mst pm
+			left outer join collection_mst cm on (cm.collection_code = pm.collection_code)
+		where
+			pm.collection_code = #{collection_code}
+	</select>
+
+	
+	
+<!-- *****************************************************************************************************************  -->
+	<select id="getProduct" parameterType="Integer" resultType="com.project.noonee.domain.product.Product">
+	SELECT
+		pm.product_code,
+		pm.category_code,
+		pm.collection_code,
+		pm.product_name,
+		pm.product_price,
+		pm.product_img
+	FROM
+		product_mst pm
+	where
+		pm.product_code = #{product_code}
+	</select>
+	
+	
+<!-- *****************************************************************************************************************  -->
+	
+	<select id="getProductList" resultType="com.project.noonee.domain.product.Product">
+	SELECT
+		pm.product_code,
+		pm.category_code,
+		pm.collection_code,
+		pm.product_name,
+		pm.product_price,
+		pm.product_img
+	FROM
+		product_mst pm
+	limit 0, 8;
+		
+	</select>
+	
+	
+<!-- *****************************************************************************************************************  -->
+
+	
+		
+<!-- *****************************************************************************************************************  -->
+
+	
+<!-- *****************************************************************************************************************  -->
+
+	
+</mapper>

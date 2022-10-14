@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=input, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=lo03phk7lg"></script>
+
+    <style>
+      .test {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 1900px;
+        height: 100px;
+      }
+
+     .line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      width: 397px;
+      height: 20px;
+
+      font-size: 12px;
+      color: #000000;
+     }
+
+     .line::before,
+     .line::after {
+        content: "";
+        flex-grow: 1;
+        background-color: #e5e5e5;
+        height: 1px;
+        width: 159px;
+     }
+
+     .test1 {
+      height: 1px;
+      width: 159px;
+
+      background-color: #e5e5e5;
+     }
+    </style>
+
+</head>
+<body>
+  <div class="test">
+    <div class="line">또는</div>
+  </div>
+  <div class="test1"></div>
+
+  <script>
+    let mainImg = ["/static/img/brandPage/page3-4.jpg", "/static/img/brandPage/page3-5.jpg",
+    "/static/img/brandPage/page3-6.jpg", "/static/img/brandPage/page3-7.jpg"];
+
+    change();
+
+    for(let i = 0; i < mainBtn.length; i++) {
+        mainBtn[i].onmousedown = () => {
+        for(let j = 0; j < flag.length; j++) {
+          flag[j] = false;
+        }
+        marketPlace.textContent = mainText[i];
+        img.src = mainImg[i];
+            flag[i] = true;
+            change();
+        }
+    }
+
+    function change() {
+      for(let i = 0; i < flag.length; i++) {
+        mainBtn[i].style.backgroundColor ="#ffffff00";
+      }
+      mainBtn[flag.indexOf(true)].style.backgroundColor ="#ffffff";
+    }
+  </script>
+  
+</body>
+</html>

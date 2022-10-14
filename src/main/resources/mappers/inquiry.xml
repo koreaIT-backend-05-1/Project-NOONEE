@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.noonee.domain.inquiry.InquiryRepository">
+<!-- *****************************************************************************************************************  -->
+
+<insert id="saveInquiry" parameterType="com.project.noonee.domain.inquiry.Inquiry"
+		useGeneratedKeys="true" keyProperty="inquiry_code">
+		insert into
+			inquiry_mst
+		values(
+			0,
+			#{user_code},
+			#{inquiry_title},
+			#{user_name},
+			#{inquiry_password},
+			#{inquiry_content},
+			#{inquiry_count},
+			now(),
+			now()
+		);
+	</insert>
+
+
+
+	<select id="getInquiryList" parameterType="hashmap" resultType="com.project.noonee.domain.inquiry.Inquiry">
+		select
+			im.inquiry_code,
+			im.inquiry_title,
+			um.user_name,
+			im.create_date,
+			im.inquiry_count,
+			(select 
+				count(*) 
+			from 
+				inquiry_mst im 
+				left outer join user_mst um on(um.user_code = im.user_code)
+			where
+				im.inquiry_title like concat('%', #{search_value}, '%')
+				or im.inquiry_content like concat('%', #{search_value}, '%')
+			) as total_inquiry_count
+		from
+			inquiry_mst im
+			left outer join user_mst um on(um.user_code = im.user_code)
+		where
+			im.inquiry_title like CONCAT('%', #{search_value}, '%')
+			or im.inquiry_content like CONCAT('%', #{search_value}, '%')
+		order by
+			im.inquiry_code DESC
+		limit #{index}, 10;
+	
+	</select>
+
+	
+	
+<select id="getInquiry" parameterType="hashmap" resultType="com.project.noonee.domain.inquiry.Inquiry">
+	SELECT
+		im.inquiry_code,
+		im.inquiry_title,
+		im.user_code,
+		um.user_name,
+		im.inquiry_content,
+		im.inquiry_count,
+		im.create_date
+	FROM
+		inquiry_mst im
+		LEFT OUTER JOIN user_mst um ON(um.user_code = im.user_code)
+	where
+	<choose>
+		<when test='flag == null'>
+				im.inquiry_code = #{inquiry_code}
+		</when>
+		<when test='flag.equals("pre")'>
+			nm.inquiry_code = (
+				select
+					max(inquiry_code)
+				from
+					inquiry_mst
+				where
+					inquiry_code &lt; #{inquiry_code}
+			)
+		</when>
+		<otherwise>
+			im.inquiry_code = (
+				select
+					min(inquiry_code)
+				from
+					inquiry_mst
+				where
+					inquiry_code &gt; #{inquiry_code}
+			)
+		</otherwise>
+	</choose>
+	</select>
+	
+
+	
+	
+	
+
+
+	<update id="count" parameterType="hashmap">
+		update
+			inquiry_mst
+		set
+			inquiry_count = inquiry_count + 1
+		where
+		<choose>
+			<when test='flag == null'>
+					inquiry_code = #{inquiry_code}
+			</when>
+			<when test='flag.equals("pre")'>
+				inquiry_code = (
+					select
+						max(inquiry_code)
+					from
+						inquiry_mst
+					where
+						inquiry_code &lt; #{inquiry_code}
+				)
+			</when>
+			<otherwise>
+				inquiry_code = (
+					select
+						min(inquiry_code)
+					from
+						inquiry_mst
+					where
+						inquiry_code &gt; #{inquiry_code}
+				)
+			</otherwise>
+		</choose>
+		</update>
+		
+
+<!-- *****************************************************************************************************************  
+
+<insert id="saveinquiryFiles" parameterType="com.project.noonee.domain.inquiry.inquiry" >
+		insert into
+			inquiry_file
+		values
+		<foreach collection="list" item="file" separator=",">
+			(
+				0,
+				#{file.inquiry_code},
+				#{file.file_name},
+				now(),
+				now()
+			)
+		</foreach>
+	</insert>	
+
+	
+  -->
+
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

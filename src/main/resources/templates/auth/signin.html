@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/signin.css">
+</head>
+<head th:replace="~{/fragments/head :: head}"></head>
+<head th:replace="~{/fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <div class="section-box">
+            	<form method="post" action ="/auth/signin">
+                <section class="signin">
+                    <div class="input-box">
+                        <div class="email-input-box">
+                            <input type="text" name="username" placeholder="이메일" class="email-input">
+					   <!-- <input type="text" name="useremail" placeholder="이메일" class="email-input"> -->
+                        </div>
+                        <div class="password-input-box">
+                            <input type="password" name="password" placeholder="비밀번호" class="password-input">
+                        </div>
+                    </div>
+                    <div class="signin-option">
+                        <input type="checkbox">
+                        <span>로그인상태유지</span>
+                    </div>
+                    <button type="submit" class="signin-btn">로그인</button>
+                    <div class="signup-and-find-id">
+                        <button type="button" class="signup-btn btn-style1">회원가입</button>
+                        <button type="button" class="find-id-password btn-style1">아이디 · 비밀번호 찾기</button>
+                    </div> 
+                </section>
+                </form>
+                <section class="oauth2-signup">
+                    <div class="or-line">
+                        <div class="line">또는</div>
+                    </div>
+                    <button type="button" class="naver-oauth2-signup-btn" onclick="location.href='/oauth2/authorization/naver';"><span class="text-n">N</span> 네이버로 시작하기</button>
+                </section>
+                <section class="">
+                    <div class="or-line">
+                        <div class="line">또는</div>
+                    </div>
+                    <button type="button" class="delivery-check">비회원 주문배송 조회</button>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+    <script src="/static/js/signin.js"></script>
+</body>
+</html>
+

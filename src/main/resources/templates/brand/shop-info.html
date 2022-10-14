@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/shop-info.css" />
+    <script
+      type="text/javascript"
+      src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=lo03phk7lg"></script>
+  </head>
+  <head th:replace="~{/fragments/head :: head}"></head>
+  <head th:replace="~{/fragments/foot :: foot}"></head>
+  <body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div id="container">
+      <main>
+        <section>
+          <div class="shop-info">
+            <div class="shop-info-map">
+              <div class="shop-info-text">
+                <span class="shop-name">Edizióne NOONEE (한남본점)</span>
+                <p>서울시 용산구 한남동 683-10</p>
+                <p>683-10, HANNAM-DONG, YONGSAN-GU, SEOUL, KOREA</p>
+                <p>TEL 02 749 5540</p>
+                <p>
+                  PARKING 1 한강진역 공영주차장 | 도보 5분거리 (5분당 400원)
+                </p>
+                <p>PARKING 2 한남동 공영주차장 | 도보 7분거리 (5분당 250원)</p>
+              </div>
+              <div class="map-box">
+                <div id="map1" class="map"></div>
+              </div>
+            </div>
+            <div class="shop-info-btn-box">
+              <button type="button" class="shop-info-btn reservation">
+                예약하기
+              </button>
+              <button type="button" class="shop-info-btn">둘러보기</button>
+            </div>
+          </div>
+          <div class="line"></div>
+        </section>
+        <section>
+          <div class="shop-info">
+            <div class="shop-info-map">
+              <div class="shop-info-text">
+                <span class="shop-name">Boutique Central(현대백화점 무역센터점)</span>
+                <p>서울시 강남구 테헤란로 517, 2F</p>
+                <p>2F, 517 TEHERAN-RO, GANGNAM-GU, SEOUL, KOREA</p>
+                <p>TEL 02 3467 8820</p>
+              </div>
+              <div class="map-box">
+                <div id="map2" class="map"></div>
+              </div>
+            </div>
+            <div class="shop-info-btn-box">
+              <button type="button" class="shop-info-btn reservation">
+                예약하기
+              </button>
+              <button type="button" class="shop-info-btn">둘러보기</button>
+            </div>
+          </div>
+          <div class="line"></div>
+        </section>
+        <section>
+          <div class="shop-info">
+            <div class="shop-info-map">
+              <div class="shop-info-text">
+                <span class="shop-name">Boutique East(현대백화점 천호점)</span>
+                <p>서울시 강동구 천호대로 1005, 1F</p>
+                <p>1F, 1005 CHEONHODAE-RO, GANGDONG-GU, SEOUL, KOREA</p>
+                <p>TEL 02 2225 7110</p>
+              </div>
+              <div class="map-box">
+                <div id="map3" class="map"></div>
+              </div>
+            </div>
+            <div class="shop-info-btn-box">
+              <button type="button" class="shop-info-btn reservation">
+                예약하기
+              </button>
+              <button type="button" class="shop-info-btn">둘러보기</button>
+            </div>
+          </div>
+          <div class="line"></div>
+        </section>
+        <section>
+          <div class="shop-info">
+            <div class="shop-info-map">
+              <div class="shop-info-text">
+                <span class="shop-name">Boutique Parc.1 (더현대서울)</span>
+                <p>서울시 영등포구 여의대로 108, 2F</p>
+                <p>2F, 108 YEOUIDAE-RO, YEONGDEONG-DU, SEOUL, KOREA</p>
+                <p>TEL 02 3277 0266</p>
+              </div>
+              <div class="map-box">
+                <div id="map4" class="map"></div>
+              </div>
+            </div>
+            <div class="shop-info-btn-box">
+              <button type="button" class="shop-info-btn reservation">
+                예약하기
+              </button>
+              <button type="button" class="shop-info-btn">둘러보기</button>
+            </div>
+          </div>
+          <div class="line"></div>
+        </section>
+      </main>
+    </div>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+
+    <script>
+      var mapOptions1 = {
+        center: new naver.maps.LatLng(37.53693550563513, 127.00169152337759),
+        zoom: 18,
+      };
+
+      var map = new naver.maps.Map("map1", mapOptions1);
+
+      var mapOptions2 = {
+        center: new naver.maps.LatLng(37.50867621202435, 127.05977760653231),
+        zoom: 17,
+      };
+
+      var map = new naver.maps.Map("map2", mapOptions2);
+
+      var mapOptions3 = {
+        center: new naver.maps.LatLng(37.53890845890191, 127.12444619556653),
+        zoom: 17,
+      };
+
+      var map = new naver.maps.Map("map3", mapOptions3);
+
+      var mapOptions4 = {
+        center: new naver.maps.LatLng(37.52611734647781, 126.92803862539661),
+        zoom: 17,
+      };
+
+      var map = new naver.maps.Map("map4", mapOptions4);
+    </script>
+  </body>
+</html>

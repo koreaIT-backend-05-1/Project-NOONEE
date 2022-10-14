@@ -1,0 +1,124 @@
+.main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    
+
+    width: 100%;
+    height: 641px;
+}
+
+.main-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.img {
+    display: inline-block;
+    padding: 10px;
+    animation: fadein 2s linear forwards;
+    animation: fadeout 2s linear forwards;
+    
+}
+
+@-webkit-keyframes fadein { 
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout { 
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.main-img-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 5;
+
+    height: 641px;
+
+    z-index: 1;
+}
+
+.market-place-text {
+    color: white;
+    font-size: 20px;
+}
+
+.main-img-btn {
+    border: 1px solid #ffffff;
+
+    padding: 15px 30px;
+
+    background-color: rgba(255, 255, 255, 0);
+
+    font-size: 14px;
+    color: white;
+}
+
+.discover-more {
+    margin-top: 53px;
+
+    width: 187px;
+    height: 51px;
+}
+
+.discover-more:hover {
+    transition-duration: 0.5s;
+	background-color: #ffffff;
+
+    color: #141414;
+}
+
+
+.directions {
+    margin-top: 30px;
+
+    width: 157px;
+    height: 51px;
+}
+
+.directions:hover {
+    transition-duration: 0.5s;
+	background-color: #ffffff;
+
+    color: #141414;
+}
+
+.img-btn {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 20px;
+
+    width: 70px;
+}
+
+.main-btn {
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+
+    width: 10px;
+    height: 10px;
+}

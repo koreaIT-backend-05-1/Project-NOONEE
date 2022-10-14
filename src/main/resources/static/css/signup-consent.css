@@ -1,0 +1,125 @@
+main {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 20px;
+
+
+}
+
+.checkbox {
+    display: flex;
+    justify-content: flex-start;
+    
+    margin-bottom: 10px;
+    
+    font-size: 12px;
+}
+
+.aft-agree::after {
+    content: '(필수)';
+    
+    font-size: 14px;
+    color: red;
+    margin-left: 5px ;
+}
+
+
+.input-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    border: none;
+    
+    padding: 12px 4px;
+    margin: 10px 0px;
+    
+    width: 400px;
+    height: 200px;
+
+}
+
+textarea {
+    resize: none;
+
+    width: 400px;
+    height: 200px;
+}
+
+.all-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.cancel-btn {
+    border: 1px solid #d6d6d6;
+
+    margin-right: 5px;
+    
+    width: 68px;
+    height: 40px;
+
+    background-color: #ffffff;
+}
+
+.signup-btn {
+    border: 1px solid #af915e;
+    
+    width: 104px;
+    height: 40px;
+    
+    background-color: #af915e;
+    
+    color: #ffffff;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    position: relative;
+
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 3px;
+    outline: none !important;
+    
+    width: 15px;
+    height: 15px;
+
+    
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    content: "✔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    overflow: hidden;
+
+    transform: scale(0) translate(-50%, -50%);
+
+    font-size: 12px;
+
+    line-height: 1;
+}
+
+input[type="checkbox"]:checked {
+    border-color: #af915e;
+
+    background-color: #af915e;
+
+    color: white;
+}
+
+input[type="checkbox"]:checked::before {
+    border-radius: 2px;
+
+    transform: scale(1) translate(-50%, -50%)
+}
+
+.consent-btn {
+
+}

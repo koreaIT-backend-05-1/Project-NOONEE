@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="/static/css/inquiry-list.css">
+    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+</head>
+<head th:replace="~{/fragments/head :: head}"></head>
+<head th:replace="~{/fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div class="container">
+        <main>
+            <div class="board-page">
+                <div class="board-header" >
+                    <div class="board-header-title">
+                        <span>예약문의</span>
+                        <span class="list-amount">123123</span>
+                    </div>
+                    <div class="board-header-search">
+                        <input type="text" class="search-input" placeholder="Search">
+                        <button type="button" class="search-icon"><i class="fa-solid fa-magnifying-glass fa-1x"></i></button>
+                    </div>
+                </div>
+                <div class="board">
+                    <table class="board-list">
+	                    <thead>
+	                        <tr class="board-list-header">
+	                            <th>No</th>
+	                            <th>제목</th>
+	                            <th>글쓴이</th>
+	                            <th>작성시간</th>
+	                            <th>조회수</th>
+	                        </tr>
+                        </thead>
+                        <tbody>
+	                        <tr class="board-list-row notice">
+	                            <td>2032</td>
+	                            <td>
+	                                <span>예약문의전 읽어주세요~ :)</span>
+	                                <i class="fa-regular fa-comment fa-1x"></i>
+	                                <span>2</span>
+	                            </td>
+	                            <td>대표관리자</td>
+	                            <td>2017-11-09</td>
+	                            <td>25373</td>
+	                        </tr>
+	                        <tr class="board-list-row">
+	                            <td>2032</td>
+	                            <td>
+	                                <i class="fa-solid fa-lock"></i>
+	                                <span>예약문의드립니다</span>
+	                                <div class="visible">
+	                                    <i class="fa-regular fa-comment fa-1x"></i>
+	                                    <span>1</span>
+	                                </div>
+	                            </td>
+	                            <td>김김김</td>
+	                            <td>2021-08-17</td>
+	                            <td>2</td>
+	                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="write-btn-box">
+                    <button type="button" class="write-btn">글쓰기</button>
+                </div>
+                <div class="page-btn-box">
+                    <button type="button" class="pre-page-btn">&lt;</button>
+                    <button type="button" class="page-number-btn">1</button>
+                    <button type="button" class="page-number-btn">2</button>
+                    <button type="button" class="page-number-btn">3</button>
+                    <button type="button" class="page-number-btn">4</button>
+                    <button type="button" class="page-number-btn">5</button>
+                    <button type="button" class="page-number-btn">6</button>
+                    <button type="button" class="page-number-btn">7</button>
+                    <button type="button" class="page-number-btn">8</button>
+                    <button type="button" class="page-number-btn">9</button>
+                    <button type="button" class="next-page-btn">&gt;</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+    <script src="/static/js/inquiry-list.js"></script>
+</body>
+</html>

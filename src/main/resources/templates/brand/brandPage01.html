@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/brandPage01.css">
+</head>
+<head th:replace="~{/fragments/head :: head}"></head>
+<head th:replace="~{/fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <div class="brand-page">
+                <div class="brand-page-card">
+                    <div class="card-title">
+                        <p>About Noonee</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="brand-page-card">
+                    <div class="card-text-box al-r">
+                        <div class="card-title">
+                            <p>SINCE 2011</p>
+                        </div>
+                        <div class="card-info al-r">
+                            <p>누니 주얼리는 디자이너 손누니가 전개하는 주얼리 브랜드입니다.</p>
+                            <p>자연에서 영감을 받은 유니크한 디자인과 섬세한 장인정신으로</p>
+                            <p>최고의 주얼리를 선보입니다.</p>
+                        </div>
+                        <div>
+                            <button class="brand-page-card-btn">제작과정 살펴보기</button>
+                        </div>
+                    </div>  
+                    <div class="card-img-box">
+                        <img src="/static/img/brandPage/page3-1.jpg" class="card-img">
+                    </div>
+                </div>
+                <div class="brand-page-card">
+                    <div class="card-img-box">
+                        <img src="/static/img/brandPage/page3-2.jpg" class="card-img">
+                    </div>
+                    <div class="card-text-box">
+                        <div class="card-title">
+                            <p>MORE NATURAL THAN NATURAL</p>
+                        </div>
+                        <div class="card-info">
+                            <p>자연의 텍스쳐에서 영감을 얻고, 섬세한 터치로 간결하게 담아낸 디자인을 선보입니다.</p>
+                            <p>착용중 생길수 있는 생활속의 작은 스크레치 등도 자연스레 제품에 녹아들어 에이징 됩니다.</p>
+                        </div>
+                        <div>
+                            <button class="brand-page-card-btn">컬렉션 살펴보기</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="brand-page-card">
+                    <div class="card-text-box al-r">
+                        <div class="card-title">
+                            <p>세계에서 인정받는 디자인</p>
+                        </div>
+                        <div class="card-info al-r">
+                            <p>누니 주얼리는 다수의 국제디자인어워드에 작품을 출품하여 수상하였습니다.</p>
+                            <p>디자인 트렌드를 선도하고, 한국 주얼리 디자인의 경쟁력을 높이기 위해</p>
+                            <p>모든 노력을 아끼지 않습니다.</p>
+                        </div>
+                        <div>
+                            <button class="brand-page-card-btn">수상내역 확인하기</button>
+                        </div>
+                    </div>
+                    <div class="card-img-box"><img src="/static/img/brandPage/page3-3.jpg" class="card-img"></div>
+                </div>
+                <div class="album-box">
+                    <div class="album-card">
+                        <div class="album-img-box">
+                            <img src="/static/img/brandPage/page3-4.jpg" class="card-img">
+                        </div>
+                        <div class="album-img-box">
+                            <img src="/static/img/brandPage/page3-7.jpg" class="card-img">
+                        </div>
+                    </div>
+                    <div class="album-card ">
+                        <div class="album-img-box">
+                            <img src="/static/img/brandPage/page3-5.jpg" class="card-img">
+                        </div>
+                        <div class="album-img-box">
+                            <img src="/static/img/brandPage/page3-6.jpg" class="card-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="brand-page-card">
+                    <div class="card-text-box al-c">
+                        <div class="card-title">
+                            <p>our boutiques</p>
+                        </div>
+                        <div class="card-info al-c">
+                            <p>누니 주얼리는 대한민국 서울 4곳 부티끄를 운영중입니다.</p>
+                            <p>각 매장은 고유의 아이덴티티를 살려 편안한 분위기에서 주얼리를 만나보실 수 있으며,</p>
+                            <p>모든 매장에서 동일한 디자인과 서비스를 만나보실 수 있습니다.</p>
+                        </div>
+                        <div>
+                            <button class="brand-page-card-btn">위치와 연락처 확인하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+</body>
+</html>

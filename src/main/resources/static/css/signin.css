@@ -1,0 +1,207 @@
+:root {
+    --main-input-border: rgb(224, 224, 224);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-top: 10px;
+}
+
+.section-box {
+    margin-top: 10px;
+
+    padding: 0px 15px;
+
+    width: 427px;
+    height: 503px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 397px;
+    height: 80px;
+}
+
+.input-box input {
+    border: 1px solid var(--main-input-border);
+
+    padding: 12px 16px;
+    
+    width: 395px;
+    height: 39px;
+
+    font-size: 12px;
+    /* color: rgb(117, 117, 117); */
+}
+
+.password-input {
+    border-top: 0px !important;
+}
+
+.signin-option {
+    margin: 10px 0px;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    position: relative;
+
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 3px;
+    outline: none !important;
+    
+    width: 15px;
+    height: 15px;
+
+    
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    content: "✔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    overflow: hidden;
+
+    transform: scale(0) translate(-50%, -50%);
+
+    font-size: 12px;
+
+    line-height: 1;
+}
+
+input[type="checkbox"]:checked {
+    border-color: rgb(175, 145, 94);
+
+    background-color: rgb(175, 145, 94);
+
+    color: white;
+}
+
+input[type="checkbox"]:checked::before {
+    border-radius: 2px;
+
+    transform: scale(1) translate(-50%, -50%)
+}
+
+.signin-option span {
+    margin-left: 5px;
+
+    font-size: 12px;
+    color: #5c5c5c;
+}
+
+.signin-btn {
+    border: 1px solid rgb(175, 145, 94);
+
+    width: 397px;
+    height: 42px;
+
+    color: rgb(175, 145, 94);
+
+    background-color: white;
+}
+
+.signin-btn:hover {
+    color: white;
+
+    background-color: rgb(175, 145, 94);
+
+    cursor: pointer;
+}
+
+.signup-and-find-id {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 8px 0px 30px;
+}
+
+.btn-style1{
+    border: none;
+    outline: none;
+
+    background-color: white;
+
+    font-size: 12px;
+    color: #5c5c5c;
+}
+
+.or-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 100%;
+
+    margin: 25px 0px 25px;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 100%;
+
+    width: 397px;
+    height: 19px;
+
+    font-size: 12px;
+}
+
+.line::before,
+.line::after {
+	content: "";
+	
+    width: 159px;
+    height: 1px;
+
+    background-color: #e0e0e0;
+}
+
+.naver-oauth2-signup-btn {
+    position: relative;
+
+    border: 1px solid rgb(39, 211, 74);
+
+    width: 397px;
+    height: 42px;
+
+    color: white;
+
+    background-color: rgb(39, 211, 74);
+}
+
+.text-n {
+    position: absolute;
+    left: 10px;
+    top: 7px;
+
+    font-size: 20px;
+    color: white;
+    font-weight: 900;
+}
+
+.delivery-check {
+    border: none;
+    outline: none;
+
+    width: 397px;
+    height: 40px;
+    
+    background-color: rgb(131, 147, 167);
+
+    font-size: 12px;
+    color: white;
+}
+
+.delivery-check:hover {
+    border: 1px solid #5c5c5c;
+}

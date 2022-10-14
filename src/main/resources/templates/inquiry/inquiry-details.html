@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="/static/css/inquiry-details.css">
+    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+</head>
+<head th:replace="~{/fragments/head :: head}"></head>
+<head th:replace="~{/fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div class="container">
+        <main>
+            <div class="main">
+                <section class="inquiry-header">
+                    <div class="inquiry-title">
+                        <span class="title-text">제목</span>
+                    </div>
+                    <div class="writer">
+                        <img src="" alt="">
+                        <div class="name">
+                            <span>이름</span>
+                            <div class="details">
+                                <span>type</span>
+                                <span>작성일</span>
+                                <span class="count">조회수</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="content">
+                    <div class="inquiry-content">
+                        <p>하기싫다</p>
+                        <p>하기싫다</p>
+                        <p>하기싫다</p>
+                        <p>하기싫다</p>
+                        <p>하기싫다</p>
+                        <p>하기싫다</p>
+                    </div>
+                    <div class="inquiry-icon">
+                        <div>
+                            <i class="fa-regular fa-comment"></i>
+                        </div>
+                        <div class="share-print">
+                            <i class="fa-solid fa-share-nodes"></i>
+                            <i class="fa-solid fa-print"></i>
+                        </div>
+                    </div>
+                </section>
+                <section class="comments">
+                    <div class="comments-writer">
+                        <div class="comments-writer-input">
+                            <input type="text" placeholder="이름" class="name-input">
+                            <input type="text" placeholder="비밀번호">
+                        </div>
+                        <div class="comments-write-area">
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="comments-pre-next">
+                        <div>
+                            <button class="next-btn">
+                                <i class="fa-solid fa-chevron-up"></i>
+                                <i class="fa-solid fa-lock"></i>
+                                다음글
+                            </button>
+                        </div>
+                        <div>
+                            <button class="pre-btn">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <i class="fa-solid fa-lock"></i>
+                                이전글
+                            </button>
+                        </div>
+                    </div>
+                    <div class="comments-list-write">
+                        <button type="button" class="list-btn">목록</button>
+                        <button type="button" class="write-btn">글쓰기</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+    <script src="/static/js/inquiry-details.js"></script>
+</body>
+</html>

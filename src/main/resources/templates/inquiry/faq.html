@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="/static/css/FAQ.css">
+    <script src="https://kit.fontawesome.com/f859fe5fed.js" crossorigin="anonymous"></script>
+</head>
+<head th:replace="~{/fragments/head :: head}"></head>
+<head th:replace="~{/fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <div class="faq-body">
+                <div class="faq-header">
+                    <span>FAQ</span>
+                    <div class="faq-search">
+                        <input type="text">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <div class="questions-list">
+                    <div class="questions">
+                        <div class="questions-title">
+                            <span class="btn-click">방문은 예약제 인가요?</span>
+                            <button type="button" id="questions" class="questions-btn">+</button>
+                        </div>
+                        <div class="questions-detail visible">
+                            <span>상담은 예약제로 운영되고 있습니다.</span>
+                        </div>
+                    </div>
+                    <div class="questions">
+                        <div class="questions-title">
+                            <span class="btn-click">방문은 예약제 인가요?</span>
+                            <button type="button" id="questions" class="questions-btn">+</button>
+                        </div>
+                        <div class="questions-answer visible">
+                            <span>상담은 예약제로 운영되고 있습니다.</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/FAQ.js"></script>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+</body>
+</html>

@@ -12,12 +12,15 @@ server:
     
 spring:
   security:
+    user:
+      name: test
+      password: 1234
     oauth2:
       client:
         registration:
           naver:
-            client-id: uiYV3lZgYFbtyeSMMOJ9
-            client-secret: SDXRCQ0nkC
+            client-id: Eb5H1V64heK1YUH5gEAl
+            client-secret: 24grRHZO0D
             scope:
             - email
             - name

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/signup.css">
+</head>
+<head th:replace="~{/fragments/head :: head}"></head>
+<head th:replace="~{/fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <div>
+                <button type="button" class="signup-btn">ID/PW 회원가입</button>
+            </div>
+            <div class="or-line">
+                <div class="line">또는</div>
+            </div>
+            <div>
+                <button type="button" class="naver-oauth2-singup-btn" onclick="location.href='/oauth2/authorization/naver';">네이버로 시작하기</button>
+            </div>
+        </main>
+    </div>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+    <script type="text/javascript" src="/static/js/signup.js"></script>
+</body>
+</html>

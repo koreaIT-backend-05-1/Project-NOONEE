@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/signup-detail.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<head th:replace="~{/fragments/head :: head}"></head>
+<head th:replace="~{/fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <div class="section-box">
+                <section class="profile-img">
+                    <img src="/static/img/signup-picture.PNG">
+                </section>
+                <section class="email-password-input">
+                    <div class="email-password">
+                        <input type="email" placeholder="이메일" class="email-input signup-input">
+                        <input type="password" placeholder="비밀번호" class="password-input signup-input">
+                        <span class="check"></span>
+                        <input type="password" placeholder="비밀번호 확인" class="password-input signup-input">
+                    </div>
+                </section>
+                <section class="name-input">
+                    <label for="name-input" class="label-point">이름 </label>
+                    <input type="text" placeholder="이름을(를) 입력하세요" id="name-input" class="signup-input">
+                </section>
+                <section class="tel-input">
+                    <label for="tel-input" class="label-point">연락처 </label>
+                    <input type="tel" placeholder="연락처" id="tel-input" class="signup-input">
+                </section>
+                <section>
+                    <button type="button" class="signup-btn">가입하기</button>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+    <script type="text/javascript" src="/static/js/signup-details.js"></script>
+</body>
+</html>

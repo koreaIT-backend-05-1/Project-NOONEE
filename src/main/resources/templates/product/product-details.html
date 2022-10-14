@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/f859fe5fed.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/product-details.css">
+</head>
+<head th:replace="~{/fragments/head :: head}"></head>
+<head th:replace="~{/fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{/fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <section class="product-img-option">
+                <div class="product-img">
+                    <img src="" alt="">
+                </div>
+                <div class="product-option">
+                    <div class="product-title-price">
+                        <div class="title">
+                            <span class="product-title">Fractal 웨딩링 for Engagement</span>
+                        </div>
+                        <div class="price-icon">
+                            <span class="product-price">2,350,000원</span>
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="details">
+                        <p>18K Champagne gold</p>
+                        <p>Main 0.3ct princess - cut Diamond</p>
+                        <p>Side Total 0.19ct Diamonds (10pcs)</p>
+                    </div>
+                    <div class="option">
+                        <div class="size flex">
+                            <span class="text1">SIZE [3호 - 18호]</span>
+                            <input type="text" placeholder="필수입력">
+                        </div>
+                        <div class="karat flex">
+                            <span class="text1">KARAT</span>
+                            <select class="select-box">
+                                <option value="14K">14K</option>
+                                <option value="18K">18K</option>
+                            </select>
+                        </div>
+                        <div class="color flex">
+                            <span class="text1">COLOR</span>
+                            <select class="select-box">
+                                <option value="14K">14K</option>
+                                <option value="18K">18K</option>
+                            </select>
+                        </div>
+                        <div class="main-stone flex">
+                            <span class="text1">MAIN STONE</span>
+                            <select class="select-box">
+                                <option value="14K">14K</option>
+                                <option value="18K">18K</option>
+                            </select>
+                        </div>
+                        <div class="btn-group">
+                            <div class="btn-group-top">
+                                <button class="btn1 buy">구매하기</button>
+                                <button class="btn1 btn2">장바구니</button>
+                                <button class="btn1 btn2">♡ 1</button>
+                            </div>
+                            <div class="btn-group-bottom">
+                                <button class="n-pay">구매하기</button>
+                                <button class="interest-list btn2">찜</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="details-review">
+                <button class="product-details btn3">상세정보</button>
+                <button class="review btn3">구매평</button>
+                <button class="question btn3">Q&A</button>
+            </section>
+            <section>
+                <div class="details-img">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <span>asd</span>
+                </div>
+                <div class="product-information">
+                    <span class="information-title"></span>
+                    <table></table>
+                    <span></span>
+                </div>
+                <div>
+                    <span></span>
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <span></span>
+                </div>
+                <div>
+                    <span></span>
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <span></span>
+                </div>
+                <div>
+                    <span></span>
+                    <img src="" alt="">
+                    <span></span>
+                </div>
+                <div class="product">
+                    <div class="product-img-price">
+                        <img src="" alt="">
+                        <div class="product-name-price">
+                            <span>Roseberry 웨딩링 for Engagement</span>
+                            <p>2,350,000원</p>
+                        </div>
+                    </div>
+                    <div class="product-img-price">
+                        <img src="" alt="">
+                        <div class="product-name-price">
+                            <span>Roseberry 웨딩링 for Engagement</span>
+                            <p>2,350,000원</p>
+                        </div>
+                    </div>
+                    <div class="product-img-price">
+                        <img src="" alt="">
+                        <div class="product-name-price">
+                            <span>Roseberry 웨딩링 for Engagement</span>
+                            <p>2,350,000원</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div th:replace="~{/fragments/footer :: footer}"></div>
+    <script src="/static/js/product-details.js"></script>
+</body>
+</html>
