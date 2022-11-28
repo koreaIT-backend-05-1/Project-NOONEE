@@ -36,7 +36,7 @@ function getFaqList(list) {
                     <label for="question${index}" class="btn-label">${faq.faqTitle}</label>
                     <button type="button" id="question${index}" class="question-btn">+</button>
                 </div>
-                <div class="questions-answer${index} visible">
+                <div class="questions-answer visible">
                     <span>${faq.faqContent}</span>
                 </div>
             </div>
@@ -44,14 +44,16 @@ function getFaqList(list) {
 	});
 }
 
-const questionBtn = document.querySelector(".question-btn");
-	questionBtn.onclick = () =>  {
-	    if(questionBtn.innerText == "+") {
-	        questionBtn.innerText = "-";
+const questionBtn = document.querySelectorAll(".question-btn");
+for(let i = 0; questionBtn.length; i++){
+	questionBtn[i].onclick = () =>  {
+	    if(questionBtn[i].innerText == "+") {
+	        questionBtn[i].innerText = "-";
 	    }else {
-	        questionBtn.innerText = "+";
+	        questionBtn[i].innerText = "+";
 	    }
 	    
 	    const questionsAnswer = document.querySelectorAll(".questions-answer");
-	    questionsAnswer.classList.toggle("visible");
+	    questionsAnswer[i].classList.toggle("visible");
+	}
 }

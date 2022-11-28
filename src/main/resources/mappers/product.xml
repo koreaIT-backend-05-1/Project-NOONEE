@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.project.noonee.domain.product.ProductRepository">
+<!-- *****************************************************************************************************************  -->
+
+	<resultMap id="product_img_files" type="com.project.noonee.domain.product.ProductImgFile">
+        <result property="id" column="img_id"></result>
+        <result property="product_code" column="product_code"></result>
+        <result property="origin_name" column="origin_name"></result>
+        <result property="temp_name" column="temp_name"></result>
+    </resultMap>
+    <resultMap id="product" type="com.project.noonee.domain.product.Product">
+        <result property="product_code" column="product_code"></result>
+        <result property="category_code" column="category_code"></result>
+        <result property="collection_code" column="collection_code"></result>
+        <result property="product_name" column="product_name"></result>
+        <result property="product_price" column="product_price"></result>
+        <result property="create_date" column="create_date"></result>
+        <result property="update_date" column="update_date"></result>
+        <collection property="product_img_files" javaType="list" resultMap="product_img_files"></collection>
+    </resultMap>	
+	
+		
+<!-- *****************************************************************************************************************  -->
+
+	<insert id="addProduct" parameterType="com.project.noonee.domain.product.Product"
+            useGeneratedKeys="true" keyProperty="product_code">
+		insert into
+			product_mst
+		values
+			(
+				0,
+				#{category_code},
+				#{collection_code},
+				#{product_name},
+				#{product_price},
+				now(),
+	            now()
+			)
+			
+	</insert>
+	
+<!-- *****************************************************************************************************************  -->
+	
+	<insert id="addImgFiles" parameterType="java.util.List">
+        insert into
+            product_img_mst
+        values
+        <foreach item="file" collection="list" separator=",">
+            (
+                0,
+                #{file.product_code},
+                #{file.origin_name},
+                #{file.temp_name},
+                now(),
+                now()
+            )
+        </foreach>
+    </insert>
+
+<!-- *****************************************************************************************************************  -->
+
+	<select id="getCategoryList" parameterType="Integer" resultType="com.project.noonee.domain.product.Product">
+		select
+			pm.product_code,
+			pm.category_code,
+			pm.product_name,
+			pm.product_price,
+			pim.temp_name
+		from
+			product_mst pm
+			left outer join category_mst cm on (cm.category_code = pm.category_code)
+			left outer join product_img_mst pim on (pim.product_code = pm.product_code)
+		where
+			pm.category_code = #{category_code}
+	</select>
+
+<!-- *****************************************************************************************************************  -->
+
+	<select id="getCollectionList" parameterType="Integer" resultType="com.project.noonee.domain.product.Product">
+		select
+			pm.product_code,
+			pm.collection_code,
+			pm.product_name,
+			pm.product_price,
+			pim.temp_name
+		from
+			product_mst pm
+			left outer join collection_mst cm on (cm.collection_code = pm.collection_code)
+			left outer join product_img_mst pim on (pim.product_code = pm.product_code)
+		where
+			pm.collection_code = #{collection_code}
+	</select>
+
+	
+	
+<!-- *****************************************************************************************************************  -->
+	<select id="getProduct" parameterType="Integer" resultType="com.project.noonee.domain.product.Product">
+		SELECT
+			pm.product_code,
+			pm.category_code,
+			pm.collection_code,
+			pm.product_name,
+			pm.product_price,
+			pim.temp_name
+		FROM
+			product_mst pm
+			left outer join product_img_mst pim on (pim.product_code = pm.product_code)
+		where
+			pm.product_code = #{product_code}
+	</select>
+	
+	
+<!-- *****************************************************************************************************************  -->
+	
+	<select id="getProductList" resultType="com.project.noonee.domain.product.Product">
+		SELECT
+			pm.product_code,
+			pm.category_code,
+			pm.collection_code,
+			pm.product_name,
+			pm.product_price,
+			pim.temp_name
+		FROM
+			product_mst pm
+			left outer join product_img_mst pim on (pim.product_code = pm.product_code)
+		limit 0, 8;
+		
+	</select>
+	
+	
+<!-- *****************************************************************************************************************  -->
+	<select id="adminProductList"  parameterType="hashmap" resultType="com.project.noonee.domain.product.Product">
+		SELECT
+			pm.product_code,
+			cm.category_name,
+			cm2.collection_name,
+			pm.product_name,
+			pm.product_price,
+			pim.temp_name,
+			(select 
+				count(*) 
+			from 
+				product_mst pm 
+			) as total_product_count
+		FROM
+			product_mst pm
+			left outer join category_mst cm on(cm.category_code = pm.category_code)
+			left outer join collection_mst cm2 on(cm2.collection_code = pm.collection_code)
+			left outer join product_img_mst pim on (pim.product_code = pm.product_code)
+		order by
+			<choose>
+				<when test="search_flag == 'registration'">
+					pm.update_date DESC
+				</when>
+				<when test="search_flag == 'low-price'">
+					pm.product_price 
+				</when>
+				<when test="search_flag == 'high-price'">
+					pm.product_price DESC
+				</when>
+				<when test="search_flag == 'name'">
+					pm.product_name DESC
+				</when>
+			</choose>
+		limit #{index}, 10;
+	</select>
+	
+		
+<!-- *****************************************************************************************************************  -->
+	<delete id="deleteProduct" parameterType="Integer">
+		delete
+		from
+			product_mst
+		where
+			product_code = #{product_code};
+	</delete>
+	
+<!-- *****************************************************************************************************************  -->
+
+	
+</mapper>

@@ -49,7 +49,7 @@ main {
 }
 
 .signup-btn {
-    border: 1px solid rgb(175, 145, 94);
+    border: 1px solid #af915e;
 
     margin-top: 25px;
 
@@ -58,7 +58,7 @@ main {
 
     color: white;
 
-    background-color: rgb(175, 145, 94);
+    background-color: #af915e;
 }
 
 

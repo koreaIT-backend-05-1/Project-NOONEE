@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <header th:fragment="header">
+        <h1 class="main-logo">
+            <img src="/static/img/logo.PNG" class="logo-img">
+        </h1>
+        <nav>
+            <div class="nav-menu">
+                <button type="button" class="main-menu-btn brand">BRAND</button>
+                <div class="nav-sub visible">
+                    <a href="/brandpage1">ABOUT NOONEE</a>
+                    <a href="/brandpage2">NOONEE DIAMOND</a>
+                    <a href="/shopinfo">SHOP INFO</a>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <button type="button" class="main-menu-btn bridal">BRIDAL</button>
+                <div class="nav-sub visible fadein">
+                    <a href="">WEDDING BAND</a>
+                    <a href="">NECKLACE</a>
+                    <a href="">EARRINGS</a>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <button type="button" class="main-menu-btn collection">COLLECTION</button>
+                <div class="nav-sub visible">
+                    <a href="">깃</a>
+                    <a href="">윤슬</a>
+                    <a href="">FRACTAL</a>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <button type="button" class="main-menu-btn fashion">FASHION</button>
+                <div class="nav-sub visible">
+                    <a href="">RING</a>
+                    <a href="">NECKLACE</a>
+                    <a href="">EARRINGS</a>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <button type="button" class="main-menu-btn q-and-a">Q&A</button>
+                <div class="nav-sub visible">
+                    <a href="/inquiry/faq">FAQ</a>
+                    <a href="/inquiry/list">A/S 문의</a>
+                    <a href="">예약 문의</a>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <button type="button" class="main-menu-btn customer">CUSTOMER</button>
+                <div class="nav-sub visible last">
+                    <a href="">REVIEW</a>
+                    <a href="">PUBLIC RELATION</a>
+                </div>
+            </div>
+        </nav>
+        <div class="sub-menu">
+            <button type="button" class="sub-menu-btn search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="auth-items">
+	            <button type="button" class="sub-menu-btn signin">LOGIN</button>
+	            <button type="button" class="sub-menu-btn signup">JOIN</button>
+            </div>
+            <button type="button" class="sub-menu-btn basket"><i class="fa-solid fa-bag-shopping"></i></button>
+            <select class="language-select" id="language">
+                <option value="korean">한국어</option>
+                <option value="English">English</option>
+            </select>
+        </div>
+        <div class="search-modal modal-visible">
+            <div class="modal-close">
+                <button class="close-btn">X</button>
+            </div>
+            <div class="search-input-area">
+                <input type="text" placeholder="검색" class="modal-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <script src="/static/js/header.js"></script>
+    </header>
+</html> 

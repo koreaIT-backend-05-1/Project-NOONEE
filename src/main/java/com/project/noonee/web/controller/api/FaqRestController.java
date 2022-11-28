@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.noonee.service.auth.faq.faqService;
+import com.project.noonee.service.inquiry.faqService;
 import com.project.noonee.web.dto.CMRespDto;
 import com.project.noonee.web.dto.faq.GetFaqListResponseDto;
 

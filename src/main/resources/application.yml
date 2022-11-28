@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: ${port:8000}
   servlet:
     encoding:
       charset: UTF-8
@@ -19,8 +19,8 @@ spring:
       client:
         registration:
           naver:
-            client-id: uiYV3lZgYFbtyeSMMOJ9
-            client-secret: SDXRCQ0nkC
+            client-id: Eb5H1V64heK1YUH5gEAl
+            client-secret: 24grRHZO0D
             scope:
             - email
             - name
@@ -50,5 +50,5 @@ mybatis:
   mapper-locations:
   - /mappers/*.xml
 
-#file: #변수처럼 만듬
-#  path: E:/bosung/bosung/workspace/git/springboot-security-20220808/upload/
+file: #변수처럼 만듬
+  path: E:/bosung/bosung/Project-NOONEE/src/main/resources/static/img

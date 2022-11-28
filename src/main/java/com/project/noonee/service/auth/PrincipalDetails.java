@@ -2,30 +2,41 @@ package com.project.noonee.service.auth;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import com.project.noonee.domain.user.User;
 
-public class PrincipalDetails implements UserDetails {
+import lombok.Data;
+
+@Data
+public class PrincipalDetails implements UserDetails, OAuth2User {
 
 	private static final long serialVersionUID = 1L;
 	
 	private User user;
-	
+	private Map<String, Object> attribute;
+		
 	public PrincipalDetails(User user) {
 		this.user = user;
+	}
+	public PrincipalDetails(User user, Map<String, Object> attribute) {
+		this.user = user;
+		this.attribute = attribute;
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		user.getUserRoles();
 		Collection<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
+
 		user.getUserRoles().forEach(role -> {
 			grantedAuthorities.add(() -> role);
 		});
-		return null;
+		
+		return grantedAuthorities;
 	}
 
 	@Override
@@ -35,7 +46,7 @@ public class PrincipalDetails implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return user.getUser_id();
+		return user.getUser_name();
 	}
 
 	@Override
@@ -47,7 +58,7 @@ public class PrincipalDetails implements UserDetails {
 	public boolean isAccountNonLocked() {
 		return true;
 	}
-
+	
 	@Override
 	public boolean isCredentialsNonExpired() {
 		return true;
@@ -57,6 +68,16 @@ public class PrincipalDetails implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-	
-	
+
+	@Override
+	public Map<String, Object> getAttributes() {
+		// TODO Auto-generated method stub
+		return attribute;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return user.getUser_name();
+	}
 }

@@ -8,6 +8,8 @@ main {
     flex-direction: column;
     align-items: center;
 
+    margin-top: 60px;
+
     width: 824px;
 }
 
@@ -24,6 +26,11 @@ main {
     height: 397px;
 
     background-color: bisque;
+}
+
+.product-img img {
+	width: 397px;
+    height: 397px;
 }
 
 .product-option {

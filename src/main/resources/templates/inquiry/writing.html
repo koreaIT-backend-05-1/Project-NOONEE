@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/f859fe5fed.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/writing.css">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script src="/static/js/summernote-lite.js"></script>
+    <script src="/static/js/summernote-ko-KR.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css">
+</head>
+<body>
+    <div id="container">
+        <main>
+            <div class="writing-header">
+                <div class="writing-title">
+                    <span>A/S 문의</span>
+                </div>
+                <nav>
+                    <div>
+                        <button type="button" class="cancel">취소</button>
+                        <button type="button" class="submit">작성</button>
+                    </div>
+                </nav>
+            </div>
+            <div class="writing-body">
+                <div class="menu">
+                    <span>대표 이미지 설정</span>
+                </div>
+                <div class="writing-area">
+                    <div class="user">
+                        <img src="/static/img/notice.PNG" alt="">
+                        <div class="input-icon">
+                            <div class="input-group">
+                                <input type="text" placeholder="작성자 이름" class="username">
+                                <input type="text" placeholder="비밀번호" class="user-password">
+                            </div>
+                            <div class="private-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                        </div>
+                        <span class="question-title">A/S 문의</span>
+                    </div>
+                    <div class="textarea">
+                        <textarea name="editordata" class="summernote" id="summernote"></textarea>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        $('.summernote').summernote({
+            placeholder: '내용을 입력해 주세요',
+            height: 500,
+            maxHeight: 500,
+            minHeight: 500,
+            width: 914,
+            lang: "ko-KR"
+        });
+    </script>
+
+    <script src="/static/js/writing.js"></script>
+</body>
+</html>
