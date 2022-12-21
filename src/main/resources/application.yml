@@ -51,4 +51,4 @@ mybatis:
   - /mappers/*.xml
 
 file: #변수처럼 만듬
-  path: E:/bosung/bosung/Project-NOONEE/src/main/resources/static/img
+  path: E:/bosung/bosung/Project-NOONEE/upload/img/

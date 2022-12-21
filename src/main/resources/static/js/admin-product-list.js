@@ -35,7 +35,7 @@ function getList(list) {
             <tr class="board-list-row product">
                 <td>${product.productCode}</td>
                 <td class="product-name">
-                    <img src="/static/img/product/${product.tempName}" class="product-img">
+                    <img  src="/image/product/${product.tempName}" class="product-img">
                     ${product.productName}
                 </td>
                 <td>${product.categoryName}</td>

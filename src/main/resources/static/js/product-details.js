@@ -30,13 +30,13 @@ function getProduct(product) {
 	const detailsImg = document.querySelector(".details-img");
 	
 	productImg.innerHTML = ``;
-	productImg.innerHTML = `<img src="/static/img/product/${product.tempName}" alt="">`;
+	productImg.innerHTML = `<img  src="/image/product/${product.tempName}" alt="">`;
 	productTitle.innerHTML = product.productName;
 	productPrice.innerHTML = showPrice;
 	detailsImg.innerHTML = ``;
 	detailsImg.innerHTML = `
-		<img src="/static/img/product/${product.tempName}" alt="">
-        <img src="/static/img/product/${product.tempName}" alt="">
+		<img  src="/image/product/${product.tempName}" alt="">
+        <img  src="/image/product/${product.tempName}" alt="">
         <span>힘들다.......</span>
 	`;
 }

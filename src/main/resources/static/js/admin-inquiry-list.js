@@ -1,7 +1,5 @@
 let nowPage = 1;
 
-
-
 if(localStorage.getItem('page') == null) {
  	load(nowPage);
 	localStorage.removeItem('page');

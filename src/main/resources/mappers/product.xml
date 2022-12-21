@@ -169,6 +169,27 @@
 		limit #{index}, 10;
 	</select>
 	
+<!-- *****************************************************************************************************************  -->
+	
+	<update id="updateProduct" parameterType="com.project.noonee.domain.product.Product">
+		update
+			product_mst	pm
+			left outer join product_img_mst pim on (pim.product_code = pm.product_code)
+		set
+			pm.category_code = #{category_code},
+			pm.collection_code = #{collection_code},
+			pm.product_name = #{product_name},
+			pm.product_price = #{product_price},
+			<if test="temp_name != null">
+				pim.origin_name = #{origin_name},
+				pim.temp_name = #{temp_name},
+			</if>
+			pm.update_date = now(),
+			pim.update_date = now()
+		where
+			pm.product_code = #{product_code}
+	</update>
+	
 		
 <!-- *****************************************************************************************************************  -->
 	<delete id="deleteProduct" parameterType="Integer">

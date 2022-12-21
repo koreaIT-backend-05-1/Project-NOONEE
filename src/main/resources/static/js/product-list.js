@@ -63,7 +63,7 @@ function getList(list) {
 		productList.innerHTML += `
 			<div class="product-img-price">
 				<input type="hidden" class="product-code" value="${product.productCode}">
-                <img src="/static/img/product/${product.tempName}" class="product-img">
+                <img src="/image/product/${product.tempName}" class="product-img">
                 <div class="product-name-price">
                     <span class="">${product.productName}</span>
                     <span class="text-style1 product-price">${showPrice}</span>

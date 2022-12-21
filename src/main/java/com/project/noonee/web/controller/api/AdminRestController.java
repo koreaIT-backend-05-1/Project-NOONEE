@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ import com.project.noonee.service.product.ProductService;
 import com.project.noonee.web.dto.CMRespDto;
 import com.project.noonee.web.dto.product.AddProductReqDto;
 import com.project.noonee.web.dto.product.ProductRespDto;
+import com.project.noonee.web.dto.product.UpdateProductReqDto;
 import com.project.noonee.web.dto.validationGroups.ValidationSequence;
 
 import lombok.RequiredArgsConstructor;
@@ -69,6 +71,21 @@ public class AdminRestController {
 		return ResponseEntity.ok(new CMRespDto<>(1, "success", productRespDto));
 	}
 	
+	@PutMapping("/update/{productCode}")
+	public ResponseEntity<?> updateProduct(UpdateProductReqDto updateProductReqDto) {
+		
+		boolean status = false;
+		
+		try {
+			status = productService.updateProduct(updateProductReqDto);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.ok(new CMRespDto<>(1, "fail", status));
+		}
+		
+		return ResponseEntity.ok(new CMRespDto<>(1, "success", status));
+	}
+	
 	@DeleteMapping("/{productCode}")
 	public ResponseEntity<?> deleteProduct(@PathVariable int productCode) {
 		boolean status = false;
@@ -77,7 +94,7 @@ public class AdminRestController {
 			status =  productService.deleteProduct(productCode);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return ResponseEntity.internalServerError().body(new CMRespDto<>(1, "delete success", status));
+			return ResponseEntity.internalServerError().body(new CMRespDto<>(1, "delete fail", status));
 		}
 		
 		return ResponseEntity.ok(new CMRespDto<>(1, "delete success", status));

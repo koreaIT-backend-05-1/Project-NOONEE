@@ -86,3 +86,12 @@ main {
 
     color: white;
 }
+
+.product-invisible {
+    display: none;
+}
+
+.product-images {
+    width: 400px;
+    height: 400px;
+}

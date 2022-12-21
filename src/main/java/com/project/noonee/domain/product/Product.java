@@ -25,6 +25,7 @@ public class Product {
 	private String product_img;
 	private String search_flag;
 	private LocalDateTime create_date;
+	private String origin_name;
 	private String temp_name;
 	
 	private List<ProductImgFile> product_img_files;

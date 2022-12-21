@@ -57,11 +57,7 @@ function getImagePreview() {
 
         setTimeout(() => {reader.readAsDataURL(file)}, i * 100);
     });
-
-    
 }
-
-
 
 submitButton.onclick = () => {
     const productInput = document.querySelectorAll(".product-input");
@@ -84,7 +80,7 @@ submitButton.onclick = () => {
 //     }
 }
 
-function add(formData) {
+function add(formData) { 
     $.ajax({
         async: false,
         type: "post",

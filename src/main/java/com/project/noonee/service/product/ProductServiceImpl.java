@@ -21,6 +21,7 @@ import com.project.noonee.domain.product.ProductImgFile;
 import com.project.noonee.domain.product.ProductRepository;
 import com.project.noonee.web.dto.product.AddProductReqDto;
 import com.project.noonee.web.dto.product.ProductRespDto;
+import com.project.noonee.web.dto.product.UpdateProductReqDto;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -69,9 +70,9 @@ public class ProductServiceImpl implements ProductService {
 	            String extension = originName.substring(originName.lastIndexOf("."));
 	            String temp_name = UUID.randomUUID().toString() + extension;
 
-	            Path uploadPath = Paths.get(filePath + "/product/" + temp_name);
+	            Path uploadPath = Paths.get(filePath + "product/" + temp_name);
 
-	            File f = new File(filePath + "/product");
+	            File f = new File(filePath + "product");
 	            if(!f.exists()) {
 	                f.mkdirs();
 	            }
@@ -173,6 +174,37 @@ public class ProductServiceImpl implements ProductService {
 	public boolean deleteProduct(int productCode) throws Exception {
 		
 		return productRepository.deleteProduct(productCode) > 0;
+	}
+
+	@Override
+	public boolean updateProduct(UpdateProductReqDto updateProductReqDto) throws Exception {
+		String temp_name = null;
+		
+		if(updateProductReqDto.getImg() != null) {
+			String originName = updateProductReqDto.getImg().getOriginalFilename();
+			String extension = originName.substring(originName.lastIndexOf("."));
+			temp_name = UUID.randomUUID().toString() + extension;
+			
+			Path uploadPath = Paths.get(filePath + "product/" + temp_name);
+			
+			File f = new File(filePath + "product");
+			if(!f.exists()) {
+				f.mkdirs();
+			}
+			
+			try {
+				Files.write(uploadPath, updateProductReqDto.getImg().getBytes());
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		
+			
+        Product product = updateProductReqDto.productEntity(temp_name);
+        
+        
+		
+		return productRepository.updateProduct(product) > 0;
 	}
 
 	
