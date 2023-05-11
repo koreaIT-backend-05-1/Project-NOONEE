@@ -78,12 +78,19 @@ public class InquiryServiceImpl implements InquiryService{
 					.username(inquiry.getUser_name())
 					.inquiryTitle(inquiry.getInquiry_title())
 					.inquiryContent(inquiry.getInquiry_content())
+					.inquiryPassword(inquiry.getInquiry_password())
 					.createDate(inquiry.getCreate_date().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")))
 					.inquiryCount(inquiry.getInquiry_count())
 					.build();
 		}
 		
 		return getInquiryRepDto;
+	}
+
+	@Override
+	public boolean deleteInquiry(int inquiryCode) throws Exception {
+		
+		return inquiryRepository.deleteInquiry(inquiryCode) > 0;
 	}
 
 	

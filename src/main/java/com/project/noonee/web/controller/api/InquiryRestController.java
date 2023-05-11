@@ -3,6 +3,7 @@ package com.project.noonee.web.controller.api;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,13 +48,13 @@ public class InquiryRestController {
 	public ResponseEntity<?> getinquiryList(@PathVariable int page, @RequestParam String searchValue) {
 		List<GetInquiryListRespDto> listDto = null;
 		
-		
 		try {
 			listDto = inquiryService.getInquiryList(page, searchValue);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "database error", listDto));
 		}
+//		log.error("{}", listDto);
 		
 		return ResponseEntity.ok(new CMRespDto<>(1, "lookup successful", listDto));
 	}
@@ -72,8 +73,24 @@ public class InquiryRestController {
 			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "db error", null));
 		}
 		
-		log.error("{}",getInquiryRepDto);
+//		log.error("{}",getInquiryRepDto);
 		
 		return ResponseEntity.ok(new CMRespDto<>(1, "success", getInquiryRepDto));
 	}
+	
+	@DeleteMapping("/{inquiryCode}")
+	public ResponseEntity<?> deleteInquiry(@PathVariable int inquiryCode) {
+		boolean status = false;
+		
+		try {
+			status = inquiryService.deleteInquiry(inquiryCode);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.internalServerError().body(new CMRespDto<>(1, "delete success", status));
+		}
+		
+		return ResponseEntity.ok(new CMRespDto<>(1, "delete success", status));
+	}
+	
+	
 }

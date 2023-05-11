@@ -46,7 +46,6 @@ function getFaqList(list) {
 
 const questionBtn = document.querySelectorAll(".question-btn");
 for(let i = 0; questionBtn.length; i++){
-	
 	questionBtn[i].onclick = () =>  {
 	    if(questionBtn[i].innerText == "+") {
 	        questionBtn[i].innerText = "-";

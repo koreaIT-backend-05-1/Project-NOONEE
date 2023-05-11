@@ -9,6 +9,7 @@ public class GetInquiryListRespDto {
 	private int inquiryCode;
 	private String inquiryTitle;
 	private String username;
+	private String inquiryPassword;
 	private String createDate;
 	private int inquiryCount;
 	private int totalinquiryCount;

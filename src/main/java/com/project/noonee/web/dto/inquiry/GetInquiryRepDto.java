@@ -10,6 +10,7 @@ public class GetInquiryRepDto {
 	private String username;
 	private String inquiryTitle;
 	private String inquiryContent;
+	private String inquiryPassword;
 	private String createDate;
 	private int inquiryCount;
 	private int totalNoticeCoint;

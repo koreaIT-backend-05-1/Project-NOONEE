@@ -27,24 +27,10 @@ main {
 .board-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-
+    
     margin-bottom: 20px;
 
-    height: 100px;
     width: 100%;
-}
-
-.board-header-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-.list-amount {
-    margin-left: 5px;
-
-    font-size: 12px;
-    color: #af915e;
 }
 
 
@@ -131,10 +117,6 @@ main {
     text-align: left;
 }
 
-
-
-
-
 .write-btn-box {
     display: flex;
     justify-content: end;
@@ -190,5 +172,79 @@ main {
 }
 
 .visible {
+    display: none;
+}
+
+
+
+.pw-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    margin-top: 300px;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.pw-modal-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    box-shadow: 3px 0px 5px 2px #00000020;
+
+    padding: 24px 23px;
+
+    width: 325px;
+    height: 112px;
+    
+    background-color: #ffffff;
+}
+
+.pw-modal-title {
+    margin-bottom: 10px;
+}
+
+.pw-modal-title span {
+    font-size: 12px;
+}
+
+.pw-input {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+
+    margin-right: 8px;
+    padding: 0px 10px;
+ 
+    width: 185px;
+    height: 34px;
+}
+
+.ok-btn {
+    border: 1px solid #af915e;
+    border-radius: 3px;
+
+    width: 52px;
+    height: 34px;
+
+    color: #af915e;
+}
+
+.ok-btn:hover {
+    background-color: #af915e;
+    
+    color: #ffffff;
+}
+
+.pw-modal-visible {
     display: none;
 }

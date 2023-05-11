@@ -1,0 +1,185 @@
+#container {
+    padding: 20px;
+
+    background-color: #f6f6f8;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.mypage-area {
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 80px;
+
+    width: 1000px;
+}
+
+.mypage-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    margin-right: 30px;
+    
+    width: 179px;
+    height: 207px;
+}
+
+.menu-btn {
+    display: flex;
+    justify-content: flex-start;
+    
+    border: 0px;
+
+    background-color: #ffffff00;
+
+    font-size: 12px;
+}
+
+.admin-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-input {
+    border: 1px solid rgb(198, 198, 198);
+    
+    margin-bottom: 15px;
+    padding: 10px;
+    
+    width: 530px;
+}
+
+textarea {
+    height: 50px;
+    resize: none;
+}
+
+.add-button {
+    border: 1px solid #af915e;
+
+    width: 50px;
+    height: 30px;
+
+    background-color: #ffffff;
+}
+
+.add-button:hover {
+    background-color: #af915e;
+    color: #ffffff;
+    transition-duration: 0.3s;
+}
+
+.submit-button {
+    border: 1px solid #af915e;
+
+    height: 30px;
+    width: 100%;
+
+    background-color: #ffffff;
+    
+    font-size: 14px;
+}
+
+.submit-button:hover {
+    background-color: #af915e;
+    color: #ffffff;
+    transition-duration: 0.3s;
+}
+
+.product-invisible {
+    display: none;
+}
+
+.product-img-inputs {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.product-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: 530px;
+}
+
+.img-box {
+    position: relative;
+
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.product-img {
+    width: 250px;
+    height: 250px;
+}
+
+/* .fa-xmark {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    position: absolute;
+    right: -5px;
+    top: -5px;
+
+    border-radius: 10px;
+
+    width: 18px;
+    height: 18px;
+
+    background-color: red;
+
+    color: black;
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+}
+
+.fa-xmark::before {
+    content: "";
+    font-size: 10px;
+} */
+
+.fa-x {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: -5px;
+    top: -5px;
+
+    border-radius: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: #af915e;
+    
+    
+    font-size: 18px;
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+}
+
+
+
+
+

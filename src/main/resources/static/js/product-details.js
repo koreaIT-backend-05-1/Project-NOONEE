@@ -1,4 +1,5 @@
 const productImg = document.querySelector(".product-img");
+const interestList = document.querySelector(".interest-list btn2");
 
 let productCode = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 
@@ -23,17 +24,20 @@ function load(uri) {
 function getProduct(product) {
 	const productImg = document.querySelector(".product-img");	
 	const productTitle = document.querySelector(".product-title");
+	let price = product.productPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+	let showPrice = price + "원";
 	const productPrice = document.querySelector(".product-price");
 	const detailsImg = document.querySelector(".details-img");
 	
 	productImg.innerHTML = ``;
-	productImg.innerHTML = `<img src="${product.productImg}" alt="">`;
+	productImg.innerHTML = `<img  src="/image/product/${product.tempName}" alt="">`;
 	productTitle.innerHTML = product.productName;
-	productPrice.innerHTML = product.productPrice;
+	productPrice.innerHTML = showPrice;
 	detailsImg.innerHTML = ``;
 	detailsImg.innerHTML = `
-		<img src="${product.productImg}" alt="">
-        <img src="${product.productImg}" alt="">
+		<img  src="/image/product/${product.tempName}" alt="">
+        <img  src="/image/product/${product.tempName}" alt="">
         <span>힘들다.......</span>
 	`;
 }
+

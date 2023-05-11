@@ -57,21 +57,23 @@ function loadCollectionList() {
 }
 
 function getList(list) {
-	
 	list.forEach(product => {
+		let price = product.productPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+		let showPrice = price + "원";
 		productList.innerHTML += `
 			<div class="product-img-price">
 				<input type="hidden" class="product-code" value="${product.productCode}">
-                <img src="${product.productImg}">
+                <img src="/image/product/${product.tempName}" class="product-img">
                 <div class="product-name-price">
                     <span class="">${product.productName}</span>
-                    <span class="text-style1 product-price">${product.productPrice}</span>
+                    <span class="text-style1 product-price">${showPrice}</span>
                 </div>
             </div>
 		`;
+
 	});
 	
-			
+	
 	const productImgPrice = document.querySelectorAll(".product-img-price");
 	
 	for(let i = 0; i < productImgPrice.length; i++) {
@@ -80,8 +82,13 @@ function getList(list) {
 			location.href = "/product/detail/" + productCodes;
 		}
 	}
-	
 }
+
+// function loadProductImg(img) {
+// 	
+
+// 	productImg = 
+// }
 
 		
 

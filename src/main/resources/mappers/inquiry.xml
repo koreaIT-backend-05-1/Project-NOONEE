@@ -22,13 +22,14 @@
 		);
 	</insert>
 
-
+<!-- *****************************************************************************************************************  -->
 
 	<select id="getInquiryList" parameterType="hashmap" resultType="com.project.noonee.domain.inquiry.Inquiry">
 		select
 			im.inquiry_code,
 			im.inquiry_title,
 			um.user_name,
+			im.inquiry_password,
 			im.create_date,
 			im.inquiry_count,
 			(select 
@@ -38,21 +39,22 @@
 				left outer join user_mst um on(um.user_code = im.user_code)
 			where
 				im.inquiry_title like concat('%', #{search_value}, '%')
-				or im.inquiry_content like concat('%', #{search_value}, '%')
+				or im.user_name like concat('%', #{search_value}, '%')
 			) as total_inquiry_count
 		from
 			inquiry_mst im
 			left outer join user_mst um on(um.user_code = im.user_code)
 		where
 			im.inquiry_title like CONCAT('%', #{search_value}, '%')
-			or im.inquiry_content like CONCAT('%', #{search_value}, '%')
+			or im.user_name like CONCAT('%', #{search_value}, '%')
+			
 		order by
 			im.inquiry_code DESC
 		limit #{index}, 10;
 	
 	</select>
 
-	
+	<!-- *****************************************************************************************************************  -->
 	
 <select id="getInquiry" parameterType="hashmap" resultType="com.project.noonee.domain.inquiry.Inquiry">
 	SELECT
@@ -61,6 +63,7 @@
 		im.user_code,
 		um.user_name,
 		im.inquiry_content,
+		im.inquiry_password,
 		im.inquiry_count,
 		im.create_date
 	FROM
@@ -96,9 +99,7 @@
 	
 
 	
-	
-	
-
+<!-- *****************************************************************************************************************  -->	
 
 	<update id="count" parameterType="hashmap">
 		update
@@ -154,6 +155,20 @@
 	
   -->
 
+
+<!-- *****************************************************************************************************************  -->
+
+	<delete id="deleteInquiry"  parameterType="Integer">
+	
+		delete
+        from
+            inquiry_mst
+        where
+            inquiry_code = #{inquiry_code}
+	
+	</delete>
+
+<!-- *****************************************************************************************************************  -->
 	
 </mapper>
 

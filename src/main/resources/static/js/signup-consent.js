@@ -5,7 +5,7 @@ const signupBtn = document.querySelector(".signup-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 
 allConsent.onclick = () => {
-	if(allConsent.checked == true) {
+	if(allConsent.checked) {
 		mustConsent.checked = true;
 		personalInfom.checked = true;
 	}else {

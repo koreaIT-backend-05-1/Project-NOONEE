@@ -12,5 +12,5 @@ public interface InquiryRepository {
 	public List<Inquiry> getInquiryList(Map<String, Object> map) throws Exception;
 	public List<Inquiry> getInquiry(Map<String, Object> map) throws Exception;
 	public int count(Map<String, Object> map) throws Exception;
-	
+	public int deleteInquiry(int inquiey_code) throws Exception;
 }

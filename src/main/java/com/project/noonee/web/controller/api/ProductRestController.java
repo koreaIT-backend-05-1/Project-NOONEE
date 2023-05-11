@@ -53,7 +53,7 @@ public class ProductRestController {
 	}
 	
 	@GetMapping("/{productCode}")
-	public ResponseEntity<?> getProduct(@PathVariable int productCode) {
+	public ResponseEntity<?> getProductDetails(@PathVariable int productCode) {
 		ProductRespDto productRespDto = null;
 		
 		try {
@@ -65,7 +65,6 @@ public class ProductRestController {
 			e.printStackTrace();
 			return ResponseEntity.internalServerError().body(new CMRespDto<>(-1, "db error", null));
 		}
-		
 		
 		return ResponseEntity.ok(new CMRespDto<>(1, "success", productRespDto));
 	}
@@ -96,5 +95,7 @@ public class ProductRestController {
 		
 		return ResponseEntity.ok(new CMRespDto<>(1, "success", null));
 	}
+	
+	
 	
 }

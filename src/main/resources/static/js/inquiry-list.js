@@ -1,6 +1,6 @@
 let nowPage = 1;
 
-load(nowPage)
+load(nowPage);
 
 loaduser(user);
 
@@ -18,6 +18,7 @@ function load(nowPage) {
 			if(response.data[0] != null) {
 				getList(response.data);
 				inquiryPageNumber(response.data[0].totalinquiryCount);
+				getinquiry(response.data)
 			}else{
 				getList(new Array());
 				inquiryPageNumber(0);
@@ -29,7 +30,7 @@ function load(nowPage) {
 	})
 }
 
-function getList(list) {
+function getList(list, index) {
 	const tbody = document.querySelector("tbody");
 	
 	tbody.innerHTML = "";
@@ -37,30 +38,59 @@ function getList(list) {
 	list.forEach(inquiry => {
 		tbody.innerHTML += `
 			<tr class="board-list-row">
-                <td>${inquiry.inquiryCode}</td>
+                <td class="inquiry-code">${inquiry.inquiryCode}</td>
                 <td>
                     <i class="fa-solid fa-lock"></i>
-                    <span>${inquiry.inquiryTitle}</span>
+                    <span class="inquiry-title">${inquiry.inquiryTitle}</span>
                     <div class="visible">
                         <i class="fa-regular fa-comment fa-1x"></i>
                         <span>1</span>
                     </div>
+					<input type="hidden" class="inquiry-password" value=${inquiry.inquiryPassword}>
                 </td>
                 <td>${inquiry.username}</td>
                 <td>${inquiry.createDate}</td>
                 <td>${inquiry.inquiryCount}</td>
             </tr>
-		`
+		`	
 	});
+	const inquiryTitle = document.querySelectorAll(".inquiry-title");
+	const pwModal = document.querySelector(".pw-modal");
 	
-	const boardListRow = document.querySelectorAll(".board-list-row");
-	boardListRow.forEach((row) => {
-		row.onclick = () => {
-			const inquiryCode = row.querySelectorAll("td")[0].textContent;
-			location.href = "/inquiry/detail/" + inquiryCode;
+	
+	
+	for(let i = 0; i < inquiryTitle.length; i++) {
+		inquiryTitle[i].onclick = () => {
+			pwModal.classList.toggle("pw-modal-visible");
+			const okBtn = document.querySelector(".ok-btn");
+			okBtn.onclick = () => {
+				console.log("클릭")
+				const pwInput = document.querySelector(".pw-input");
+				const inquiryPassword = document.querySelectorAll(".inquiry-password");
+				if(pwInput.value == inquiryPassword[i].value) {
+					const inquiryCode = document.querySelectorAll(".inquiry-code");
+					location.href = "/inquiry/detail/" + inquiryCode[i].textContent;
+				}
+			}
 		}
-	})
+	}
+
+	pwModal.onclick = (e) => {
+		if(e.target == pwModal) {
+			pwModal.classList.toggle("pw-modal-visible");
+		}
+	}
+}		
+
+
+	
+
+
+function getinquiry(list) {
+	
+
 }
+	
 
 function inquiryPageNumber(totalinquiryCount) {
 	const pageBtn = document.querySelector(".page-btn-box");
@@ -133,3 +163,4 @@ function loaduser(user) {
 	
 }
 }
+

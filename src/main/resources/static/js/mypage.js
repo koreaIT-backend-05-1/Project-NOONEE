@@ -5,6 +5,7 @@ const deleteUser = document.querySelector(".delete-user");
 const deleteModal = document.querySelector(".delete-modal");
 const cancel = document.querySelector(".cancel");
 
+
 username.innerHTML = "";
 
 username.innerHTML = `${user.user_name}님 안녕하세요.`;
@@ -23,5 +24,11 @@ deleteUser.onclick = () => {
 
 cancel.onclick = () => {
 	deleteModal.classList.toggle("visible");
+}
+
+updateModal.onclick = (e) => {
+	if(e.target == updateModal) {
+		updateModal.classList.toggle("update-visible");
+	}
 }
 	

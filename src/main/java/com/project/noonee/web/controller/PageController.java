@@ -10,11 +10,7 @@ public class PageController {
 	public String loadMain() {
 		return "main";
 	}
-	
-	@GetMapping("/auth/main")
-	public String loadMain2() {
-		return "main";
-	}
+
 	
 	@GetMapping("/auth/signin")
 	public String loadSignin() {

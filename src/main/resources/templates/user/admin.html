@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<head th:replace="~{fragments/head :: head}"></head>
+<head th:replace="~{fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <div class="mypage-area">
+                <div class="mypage-menu">
+                    <button type="button" class="menu-btn insert-product">상품 등록</button>
+                    <button type="button" class="menu-btn select-product">상품 리스트</button>
+                    <button type="button" class="menu-btn set-product">게시글 조회</button>
+                    <button type="button" class="menu-btn update-user">회원 리스트</button>
+                    <button type="button" class="menu-btn delete-user">회원탈퇴</button>
+                </div>
+                <div class="user-and-content">
+                    <section class="admin-main">
+                        <select class="product-input">
+                            <option value="none" selected>상품 종류</option>
+                            <option value="1">WEDDING BAND</option>
+                            <option value="2">NECKLACE</option>
+                            <option value="3">EARRINGS</option>
+                        </select>
+                        <select class="product-input">
+                            <option value="none" selected>Collection</option>
+                            <option value="1">깃</option>
+                            <option value="2">윤슬</option>
+                            <option value="3">FRACTAL</option>
+                            <option value="4">NOONEE</option>
+                        </select>
+                        <input type="text" class="product-input" placeholder="상품명을 입력하세요">
+                        <input type="text" class="product-input" placeholder="가격을 입력하세요">
+                        
+                        <form enctype="multipart/form-data">
+                            <div class="product-img-inputs">
+                                <label>상품 이미지</label>
+                                <button type="button" class="add-button">추가</button>
+                                <input type="file" class="file-input product-invisible" name="file" multiple>
+                            </div>
+                        </form>
+                        <div class="product-images">
+                            
+                        </div>
+                        <button type="button" class="submit-button product-button">등록하기</button>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div> 
+    <div th:replace="~{fragments/footer :: footer}"></div>
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>

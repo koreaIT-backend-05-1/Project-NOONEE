@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/admin-update-product.css">
+</head>
+<head th:replace="~{fragments/head :: head}"></head>
+<head th:replace="~{fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <section class="product-img-option">
+                <form enctype="multipart/form-data">
+                    <div class="product-img-inputs">
+                        <input type="file" class="file-input product-invisible" name="file">
+                    </div>
+                </form>
+                <div class="product-images">
+                    <div class="img-box">
+                        <img class="product-img" src="">
+                    </div>
+                </div>
+                <div class="product-details">
+                    <input type="text" value="Fractal 웨딩링 for Engagement" class="product-name product-input">
+                    <input type="text" value="2,350,000원" class="product-price product-input">
+                    <select class="product-input category-select">
+                        <option value="none" selected>상품 종류</option>
+                        <option value="1">WEDDING BAND</option>
+                        <option value="2">NECKLACE</option>
+                        <option value="3">EARRINGS</option>
+                    </select>
+                    <select class="product-input collection-select">
+                        <option value="none" selected>Collection</option>
+                        <option value="1">깃</option>
+                        <option value="2">윤슬</option>
+                        <option value="3">FRACTAL</option>
+                        <option value="4">NOONEE</option>
+                    </select>
+                    <button type="button" class="add-img-button">사진수정</button>
+                    <button type="button" class="update-button">수정하기</button>
+                    <!-- <div class="line"></div> -->
+                </div>
+                </div>
+            </section>
+        </main>
+    </div> 
+    <div th:replace="~{fragments/footer :: footer}"></div>
+    <script src="/static/js/admin-update-product.js"></script>
+</body>
+</html>

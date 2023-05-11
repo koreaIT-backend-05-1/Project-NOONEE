@@ -32,6 +32,7 @@ public class Inquiry {
 				.inquiryCode(inquiry_code)
 				.inquiryTitle(inquiry_title)
 				.username(user_name)
+				.inquiryPassword(inquiry_password)
 				.createDate(create_date.format(DateTimeFormatter.ofPattern("yyyy-MM")))
 				.inquiryCount(inquiry_count)
 				.totalinquiryCount(total_inquiry_count)

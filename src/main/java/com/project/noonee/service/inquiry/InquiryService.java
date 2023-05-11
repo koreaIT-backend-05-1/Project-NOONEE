@@ -11,4 +11,5 @@ public interface InquiryService {
 	public int addInquiry(AddInquiryReqDto addInquiryReqDto) throws Exception;
 	public List<GetInquiryListRespDto> getInquiryList(int page, String searchValue) throws Exception;
 	public GetInquiryRepDto getInquiry(int inquiryCode, String searchValue) throws Exception;
+	public boolean deleteInquiry(int inquiryCode) throws Exception;
 }

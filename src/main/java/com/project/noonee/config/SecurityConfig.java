@@ -26,14 +26,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable();  
+		http.csrf().disable();
 		http.authorizeRequests() 
-			.antMatchers() 
-			.authenticated() 
-			.anyRequest() 
-			.permitAll()  
+			.antMatchers("/admin/**")
+			.access("hasRole('ADMIN')")
+			.anyRequest()
+			.permitAll()
 			
-			.and()  
+			.and()
 			
 			.formLogin()
 //			.usernameParameter("useremail") 아이디를 username으로 할지 useremail로 할지

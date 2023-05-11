@@ -42,7 +42,7 @@ navMenus.forEach((navMenu) => {
 })
 
 logo.onclick = () => {
-	location.href = "/auth/main";
+	location.href = "/main";
 }
 
 function getPrincipal() {

@@ -57,13 +57,15 @@ function getList(list) {
 	const productList = document.querySelector(".product");
 	productList.innerHTML = "";
 		list.forEach(product => { 
+			let price = product.productPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+			let showPrice = price + "원";
 			productList.innerHTML += `
 				<div class="product-img-price">
 					<input type="hidden" class="product-code" value="${product.productCode}">
-	                <img src="${product.productImg}">
+	                <img src="/image/product/${product.tempName}">
 	                <div class="product-name-price">
 	                    <span class="text-style3 ">${product.productName}</span>
-	                    <span class="text-style1 product-price">${product.productPrice}</span>
+	                    <span class="text-style1 product-price">${showPrice}</span>
 	                </div>
 	            </div>
 			`

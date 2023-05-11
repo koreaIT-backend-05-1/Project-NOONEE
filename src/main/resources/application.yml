@@ -50,5 +50,5 @@ mybatis:
   mapper-locations:
   - /mappers/*.xml
 
-#file: #변수처럼 만듬
-#  path: E:/bosung/bosung/workspace/git/springboot-security-20220808/upload/
+file: #변수처럼 만듬
+  path: E:/bosung/bosung/Project-NOONEE/upload/img/

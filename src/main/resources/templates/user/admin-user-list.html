@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/admin-user-list.css">
+</head>
+<head th:replace="~{fragments/head :: head}"></head>
+<head th:replace="~{fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <div class="mypage-area">
+                <div class="mypage-menu">
+                    <button type="button" class="menu-btn insert-product">상품 등록</button>
+                    <button type="button" class="menu-btn select-product">상품 리스트</button>
+                    <button type="button" class="menu-btn set-product">게시글 조회</button>
+                    <button type="button" class="menu-btn update-user">회원 리스트</button>
+                    <button type="button" class="menu-btn delete-user">회원탈퇴</button>
+                </div>
+                <div class="board-page">
+                    <div class="board">
+                        <table class="board-list">
+                            <thead>
+                                <tr class="board-list-header">
+                                    <th>No</th>
+                                    <th>Id</th>
+                                    <th>Email</th>
+                                    <th>이름</th>
+                                    <th>전화번호</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="board-list-row product">
+                                    <td>1</td>
+                                    <td>test@test.com</td>
+                                    <td>test@test.com</td>
+                                    <td>test</td>
+                                    <td>01011112222</td>
+                                </tr>
+                                <tr class="board-list-row product">
+                                    <td>1</td>
+                                    <td>test@test.com</td>
+                                    <td>test@test.com</td>
+                                    <td>test</td>
+                                    <td>01011112222</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="page-btn-box">
+                        <button type="button" class="pre-page-btn">&lt;</button>
+                        <button type="button" class="page-number-btn">1</button>
+                        <button type="button" class="page-number-btn">2</button>
+                        <button type="button" class="page-number-btn">3</button>
+                        <button type="button" class="page-number-btn">4</button>
+                        <button type="button" class="page-number-btn">5</button>
+                        <button type="button" class="next-page-btn">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div> 
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

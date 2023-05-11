@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/admin-product-list.css">
+</head>
+<head th:replace="~{fragments/head :: head}"></head>
+<head th:replace="~{fragments/foot :: foot}"></head>
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    <div id="container">
+        <main>
+            <div class="mypage-area">
+                <div class="mypage-menu">
+                    <button type="button" class="menu-btn insert-product">상품 등록</button>
+                    <button type="button" class="menu-btn select-product">상품 리스트</button>
+                    <button type="button" class="menu-btn set-product">게시글 조회</button>
+                    <button type="button" class="menu-btn update-user">회원 리스트</button>
+                    <button type="button" class="menu-btn delete-user">회원탈퇴</button>
+                </div>
+                <div class="board-page">
+                    <div class="board-header" >
+                        <select class="select-box">
+                            <option value="registration">등록순</option>
+                            <option value="low-price">낮은가격순</option>
+                            <option value="high-price">높은가격순</option>
+                            <option value="name">이름순</option>
+                        </select>
+                    </div>
+                    <div class="board">
+                        <table class="board-list">
+                            <thead>
+                                <tr class="board-list-header">
+                                    <th>No</th>
+                                    <th>상품명</th>
+                                    <th>상품종류</th>
+                                    <th>collection</th>
+                                    <th>가격</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="board-list-row product">
+                                    <td>2032</td>
+                                    <td>test</td>
+                                    <td>WEDDING BAND</td>
+                                    <td>깃</td>
+                                    <td>1234567</td>
+                                    <td><button type="button" class="list-button delete-button"><i class="fa-regular fa-trash-can"></i></button></td>
+                                </tr>
+                                <tr class="board-list-row product">
+                                    <td>2032</td>
+                                    <td>test</td>
+                                    <td>WEDDING BAND</td>
+                                    <td>깃</td>
+                                    <td>1234567</td>
+                                    <td><button type="button" class="list-button delete-button"><i class="fa-regular fa-trash-can"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="page-btn-box">
+                        <button type="button" class="pre-page-btn">&lt;</button>
+                        <button type="button" class="page-number-btn">1</button>
+                        <button type="button" class="page-number-btn">2</button>
+                        <button type="button" class="page-number-btn">3</button>
+                        <button type="button" class="page-number-btn">4</button>
+                        <button type="button" class="page-number-btn">5</button>
+                        <button type="button" class="next-page-btn">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div> 
+    <div th:replace="~{fragments/footer :: footer}"></div>
+    <script src="/static/js/admin-product-list.js"></script>
+</body>
+</html>
